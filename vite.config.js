@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // Baris base ini yang penting untuk GitHub Pages
   // Saya telah mengubahnya menyesuaikan dengan nama asli repositori Anda di GitHub
-  base: 'https://github.com/tiamangea/EcoCraft.id', 
+  base: '/EcoCraft.id/',
   
   plugins: [react()],
 })

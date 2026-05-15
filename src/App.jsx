@@ -7,6 +7,8 @@ import {
   History, HeadphonesIcon, CreditCard, Gift, Heart, Shield, Globe, HelpCircle, Smartphone, Fingerprint, Activity,
   Share2, MoreVertical, Newspaper, ExternalLink
 } from 'lucide-react';
+import logoKu from './assets/logo.png';
+import bgKu from './assets/Background.jpeg';
 
 // --- MOCK DATA (30 PRODUK UMKM KRIYA KAYU) ---
 const INITIAL_PRODUCTS = [
@@ -1383,9 +1385,8 @@ function AuthScreen({ setAuth, mode, setMode }) {
   // =========================================================================
   // GANTI LINK BACKGROUND LOGIN ANDA DI SINI
   // =========================================================================
-  const BACKGROUND_LOGIN_URL = "background.jpeg";
-
-  const LOGO_LOGIN_URL = "logo.png"; 
+  const BACKGROUND_LOGIN_URL = bgKu;
+  const LOGO_LOGIN_URL = logoKu; 
 
   const handleSubmit = (e) => {
     e.preventDefault();
