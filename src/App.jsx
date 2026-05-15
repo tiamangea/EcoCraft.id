@@ -289,7 +289,7 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
             Ubah Limbah Jadi Berkah, <br/> Belanja Lebih Murah
           </h1>
           <p className="text-sm md:text-lg text-green-100">
-            "Mulai gaya hidup sirkuler dari hal kecil. Ubah limbah Anda menjadi Koin Cerdas berbasis Blockchain untuk mendukung produk UMKM lokal."
+            "Mulai gaya hidup sirkular dari hal kecil. Ubah limbah Anda menjadi Koin Cerdas berbasis Blockchain untuk mendukung produk UMKM lokal."
           </p>
         </div>
 
