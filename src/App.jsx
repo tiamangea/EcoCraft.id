@@ -289,7 +289,7 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
             Ubah Limbah Jadi Berkah, <br/> Belanja Lebih Murah
           </h1>
           <p className="text-sm md:text-lg text-green-100">
-            Platform sirkuler UMKM. Beli furnitur ramah lingkungan, atau tukar limbah kayu Anda jadi Koin cerdas via Blockchain.
+            "Mulai gaya hidup sirkuler dari hal kecil. Ubah limbah Anda menjadi Koin Cerdas berbasis Blockchain untuk mendukung produk UMKM lokal."
           </p>
         </div>
 
@@ -1403,7 +1403,7 @@ function AuthScreen({ setAuth, mode, setMode }) {
               <img src={LOGO_LOGIN_URL} alt="Logo" className="w-full h-full object-cover" />
             </div>
             <h2 className="text-4xl font-extrabold mb-3 tracking-tight">EcoCraft<span className="text-green-400">.id</span></h2>
-            <p className="text-lg text-green-100 font-medium">Transformasi Digital UMKM Kriya Kayu dengan Sistem Sirkuler & Blockchain.</p>
+            <p className="text-lg text-green-100 font-medium">Solusi Belanja Kebutuhan Anda! Bersama EcoCraft.id Membantu UMKM Lebih Maju.</p>
           </div>
         </div>
         <div className="w-full md:w-1/2 p-8 sm:p-12 bg-white flex flex-col justify-center">
