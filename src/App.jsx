@@ -282,7 +282,7 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
               Cari
             </button>
           </div>
-        </div>
+        </div> 
 
         <div className="relative z-10 text-center max-w-2xl mb-10">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
