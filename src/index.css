@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Jika menggunakan tailwindcss v4, perintahnya adalah @import "tailwindcss"; */
+/* Namun jika Anda masih menggunakan versi v3, perintahnya adalah: */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
