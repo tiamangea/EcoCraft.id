@@ -224,7 +224,7 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
   const CURRENT_DAY = 4; 
   const WEEK_DAYS = ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'];
 
-  const HERO_BACKGROUND_IMAGE = "background.jpeg";
+  const HERO_BACKGROUND_IMAGE = bgKu;
 
   const filteredProducts = products.filter(product => 
     product.name.toLowerCase().includes(searchQuery.toLowerCase())
