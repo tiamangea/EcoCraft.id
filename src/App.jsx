@@ -7,6 +7,7 @@ import {
   History, HeadphonesIcon, CreditCard, Gift, Heart, Shield, Globe, HelpCircle, Smartphone, Fingerprint, Activity,
   Share2, MoreVertical, Newspaper, ExternalLink
 } from 'lucide-react';
+
 import logoKu from './assets/logo.png';
 import bgKu from './assets/Background.jpeg';
 
@@ -18,30 +19,30 @@ const INITIAL_PRODUCTS = [
   { id: 4, name: 'Rak Dinding Gantung Minimalis Serbaguna', price: 200000, img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=80', desc: 'Rak minimalis cocok untuk hiasan dinding ruang tamu. Terbuat dari papan kayu mahoni solid. Sudah termasuk baut dan paku beton.', rating: 4.6, sold: 215, shop: 'Kriya Nusantara', stock: 28 },
   { id: 5, name: 'Tatakan Gelas (Coaster) Potongan Kayu Rustic', price: 25000, img: 'https://images.unsplash.com/photo-1611080665942-886d34bba4ce?auto=format&fit=crop&w=600&q=80', desc: 'Tatakan gelas tahan panas dari potongan batang kayu asli. Kulit kayu dibiarkan natural di bagian tepinya.', rating: 4.9, sold: 1050, shop: 'EcoWood Studio', stock: 150 },
   { id: 6, name: 'Lemari Pakaian Kayu Mahoni 2 Pintu', price: 1250000, img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80', desc: 'Lemari pakaian kokoh dari kayu mahoni pilihan dengan ukiran simpel.', rating: 4.8, sold: 45, shop: 'Mebel Saudara', stock: 3 },
-  { id: 7, name: 'Mangkok Kayu Mahoni Food Grade', price: 45000, img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80', desc: 'Mangkok kayu aman untuk makanan (food grade), cocok untuk smoothie bowl.', rating: 4.9, sold: 870, shop: 'Kriya Nusantara', stock: 88 },
-  { id: 8, name: 'Jam Dinding Kayu Unik Bentuk Bulat', price: 120000, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Jam dinding estetik bergaya scandinavian dari kayu pinus.', rating: 4.7, sold: 320, shop: 'PineCraft ID', stock: 35 },
-  { id: 9, name: 'Set Sendok Garpu Kayu Estetik Ramah Lingkungan', price: 35000, img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80', desc: 'Set alat makan kayu jati yang ringan dan mudah dibersihkan.', rating: 4.8, sold: 1200, shop: 'Jati Berkah Jepara', stock: 250 },
-  { id: 10, name: 'Nampan Kayu Jati Elegan (Serving Tray)', price: 85000, img: 'https://images.unsplash.com/photo-1611080665942-886d34bba4ce?auto=format&fit=crop&w=600&q=80', desc: 'Nampan kayu untuk menyajikan teh/kopi tamu dengan handle yang nyaman.', rating: 4.9, sold: 450, shop: 'Kriya Nusantara', stock: 65 },
-  { id: 11, name: 'Meja Belajar Lipat Kayu Anak', price: 175000, img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80', desc: 'Meja lipat praktis untuk anak belajar atau bekerja pakai laptop di kasur.', rating: 4.6, sold: 530, shop: 'Mebel Saudara', stock: 40 },
-  { id: 12, name: 'Rak Sepatu Kayu Susun 3 Tingkat', price: 250000, img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=80', desc: 'Rak sepatu minimalis yang mampu menampung hingga 9 pasang sepatu.', rating: 4.7, sold: 280, shop: 'PineCraft ID', stock: 22 },
-  { id: 13, name: 'Tempat Tisu Kayu Estetik Ruang Tamu', price: 55000, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Kotak tisu kayu dengan tekstur natural yang mempercantik meja tamu.', rating: 4.8, sold: 610, shop: 'EcoWood Studio', stock: 115 },
-  { id: 14, name: 'Gantungan Baju Berdiri (Standing Hanger) Kayu', price: 185000, img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=80', desc: 'Gantungan baju dan topi multifungsi untuk ditaruh di sudut kamar.', rating: 4.9, sold: 340, shop: 'Jati Berkah Jepara', stock: 18 },
-  { id: 15, name: 'Talenan Dapur Kayu Mahoni Solid', price: 65000, img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=600&q=80', desc: 'Talenan tebal anti retak, cocok untuk memotong daging atau sayuran.', rating: 4.8, sold: 950, shop: 'Kriya Nusantara', stock: 80 },
-  { id: 16, name: 'Nakas (Meja Samping Ranjang) Laci 2 Minimalis', price: 350000, img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80', desc: 'Meja kecil di sebelah kasur untuk menaruh lampu tidur dan buku.', rating: 4.7, sold: 175, shop: 'PineCraft ID', stock: 12 },
-  { id: 17, name: 'Kursi Bar Kayu Tinggi (Bar Stool)', price: 275000, img: 'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80', desc: 'Kursi bar estetik untuk meja dapur bersih (kitchen island).', rating: 4.6, sold: 88, shop: 'Jati Berkah Jepara', stock: 8 },
-  { id: 18, name: 'Vas Bunga Kayu Rustic Kering', price: 75000, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Vas bunga dari sisa potongan kayu solid, cocok untuk dekorasi bunga kering.', rating: 4.9, sold: 410, shop: 'Limbah Jadi Karya', stock: 55 },
-  { id: 19, name: 'Mainan Edukasi Anak (Puzzle Balok Kayu)', price: 45000, img: 'https://images.unsplash.com/photo-1611080665942-886d34bba4ce?auto=format&fit=crop&w=600&q=80', desc: 'Mainan susun balok non-toxic, aman untuk anak belajar bentuk.', rating: 4.8, sold: 760, shop: 'EcoToys', stock: 120 },
-  { id: 20, name: 'Kotak Pensil Meja Kayu Multifungsi', price: 30000, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Organizer alat tulis untuk merapikan meja kerja atau meja belajar.', rating: 4.7, sold: 520, shop: 'PineCraft ID', stock: 90 },
-  { id: 21, name: 'Cermin Dinding Bingkai Kayu Bulat', price: 210000, img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80', desc: 'Cermin rias dinding dengan bingkai kayu jati belanda yang elegan.', rating: 4.9, sold: 310, shop: 'Kriya Nusantara', stock: 25 },
-  { id: 22, name: 'Partisi Ruangan Kayu (Pembatas Ruang) Lipat', price: 750000, img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=80', desc: 'Pembatas ruangan lipat estetik untuk memisahkan ruang tamu dan ruang keluarga.', rating: 4.8, sold: 65, shop: 'Mebel Saudara', stock: 4 },
-  { id: 23, name: 'Kursi Teras / Taman Lipat Portabel', price: 320000, img: 'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80', desc: 'Kursi santai lipat untuk bersantai di teras rumah, mudah disimpan.', rating: 4.7, sold: 210, shop: 'Jati Berkah Jepara', stock: 15 },
-  { id: 24, name: 'Kotak Perhiasan Kayu Ukiran Jepara', price: 150000, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Kotak simpan aksesoris dengan ukiran asli pengrajin Jepara bagian tutupnya.', rating: 4.9, sold: 195, shop: 'Jati Berkah Jepara', stock: 32 },
-  { id: 25, name: 'Dipan Tempat Tidur Jati Ukuran Queen', price: 2500000, img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80', desc: 'Rangka tempat tidur sangat kokoh dari full kayu jati pilihan.', rating: 4.9, sold: 24, shop: 'Mebel Saudara', stock: 2 },
-  { id: 26, name: 'Rak Buku Sudut (Corner Shelf) Kayu', price: 195000, img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=80', desc: 'Memanfaatkan sudut kosong rumah Anda untuk menaruh koleksi buku / foto.', rating: 4.6, sold: 180, shop: 'PineCraft ID', stock: 14 },
-  { id: 27, name: 'Meja Makan Keluarga 4 Kursi Jati Belanda', price: 1850000, img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80', desc: 'Set meja makan lengkap untuk keluarga kecil dengan desain Scandinavian.', rating: 4.8, sold: 55, shop: 'EcoWood Studio', stock: 5 },
-  { id: 28, name: 'Nampan Sarapan Pagi Kayu (Bed Tray)', price: 135000, img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80', desc: 'Nampan dengan kaki lipat untuk menikmati sarapan nyaman di atas kasur.', rating: 4.9, sold: 285, shop: 'Kriya Nusantara', stock: 45 },
-  { id: 29, name: 'Papan Nama Kayu Custom Ukir (Hiasan Pintu)', price: 65000, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Bisa custom nama Anda, cocok digantung di depan kamar atau pintu rumah.', rating: 4.8, sold: 740, shop: 'Limbah Jadi Karya', stock: 999 },
-  { id: 30, name: 'Hiasan Dinding Geometris Kayu Daur Ulang', price: 250000, img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=600&q=80', desc: 'Hiasan dinding eksklusif terbuat dari gabungan serbuk dan potongan kayu sisa.', rating: 4.7, sold: 110, shop: 'Limbah Jadi Karya', stock: 10 }
+  { id: 7, name: 'Mangkok Kayu Mahoni Food Grade', price: 45000, img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c848?auto=format&fit=crop&w=600&q=80', desc: 'Mangkok kayu aman untuk makanan (food grade), cocok untuk smoothie bowl.', rating: 4.9, sold: 870, shop: 'Kriya Nusantara', stock: 88 },
+  { id: 8, name: 'Jam Dinding Kayu Unik Bentuk Bulat', price: 120000, img: 'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=600&q=80', desc: 'Jam dinding estetik bergaya scandinavian dari kayu pinus.', rating: 4.7, sold: 320, shop: 'PineCraft ID', stock: 35 },
+  { id: 9, name: 'Set Sendok Garpu Kayu Estetik Ramah Lingkungan', price: 35000, img: 'https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?auto=format&fit=crop&w=600&q=80', desc: 'Set alat makan kayu jati yang ringan dan mudah dibersihkan.', rating: 4.8, sold: 1200, shop: 'Jati Berkah Jepara', stock: 250 },
+  { id: 10, name: 'Nampan Kayu Jati Elegan (Serving Tray)', price: 85000, img: 'https://images.unsplash.com/photo-1585501861053-cb20668f44de?auto=format&fit=crop&w=600&q=80', desc: 'Nampan kayu untuk menyajikan teh/kopi tamu dengan handle yang nyaman.', rating: 4.9, sold: 450, shop: 'Kriya Nusantara', stock: 65 },
+  { id: 11, name: 'Meja Belajar Lipat Kayu Anak', price: 175000, img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80', desc: 'Meja lipat praktis untuk anak belajar atau bekerja pakai laptop di kasur.', rating: 4.6, sold: 530, shop: 'Mebel Saudara', stock: 40 },
+  { id: 12, name: 'Rak Sepatu Kayu Susun 3 Tingkat', price: 250000, img: 'https://images.unsplash.com/photo-1595526051245-4506e0005bd0?auto=format&fit=crop&w=600&q=80', desc: 'Rak sepatu minimalis yang mampu menampung hingga 9 pasang sepatu.', rating: 4.7, sold: 280, shop: 'PineCraft ID', stock: 22 },
+  { id: 13, name: 'Tempat Tisu Kayu Estetik Ruang Tamu', price: 55000, img: 'https://images.unsplash.com/photo-1624823523588-46ba0e44669d?auto=format&fit=crop&w=600&q=80', desc: 'Kotak tisu kayu dengan tekstur natural yang mempercantik meja tamu.', rating: 4.8, sold: 610, shop: 'EcoWood Studio', stock: 115 },
+  { id: 14, name: 'Gantungan Baju Berdiri (Standing Hanger) Kayu', price: 185000, img: 'https://images.unsplash.com/photo-1551298370-9d3d53740c72?auto=format&fit=crop&w=600&q=80', desc: 'Gantungan baju dan topi multifungsi untuk ditaruh di sudut kamar.', rating: 4.9, sold: 340, shop: 'Jati Berkah Jepara', stock: 18 },
+  { id: 15, name: 'Talenan Dapur Kayu Mahoni Solid', price: 65000, img: 'https://images.unsplash.com/photo-1593926879836-ec1cbcd41bc3?auto=format&fit=crop&w=600&q=80', desc: 'Talenan tebal anti retak, cocok untuk memotong daging atau sayuran.', rating: 4.8, sold: 950, shop: 'Kriya Nusantara', stock: 80 },
+  { id: 16, name: 'Nakas (Meja Samping Ranjang) Laci 2 Minimalis', price: 350000, img: 'https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?auto=format&fit=crop&w=600&q=80', desc: 'Meja kecil di sebelah kasur untuk menaruh lampu tidur dan buku.', rating: 4.7, sold: 175, shop: 'PineCraft ID', stock: 12 },
+  { id: 17, name: 'Kursi Bar Kayu Tinggi (Bar Stool)', price: 275000, img: 'https://images.unsplash.com/photo-1508215885820-4585e5610208?auto=format&fit=crop&w=600&q=80', desc: 'Kursi bar estetik untuk meja dapur bersih (kitchen island).', rating: 4.6, sold: 88, shop: 'Jati Berkah Jepara', stock: 8 },
+  { id: 18, name: 'Vas Bunga Kayu Rustic Kering', price: 75000, img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80', desc: 'Vas bunga dari sisa potongan kayu solid, cocok untuk dekorasi bunga kering.', rating: 4.9, sold: 410, shop: 'Limbah Jadi Karya', stock: 55 },
+  { id: 19, name: 'Mainan Edukasi Anak (Puzzle Balok Kayu)', price: 45000, img: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80', desc: 'Mainan susun balok non-toxic, aman untuk anak belajar bentuk.', rating: 4.8, sold: 760, shop: 'EcoToys', stock: 120 },
+  { id: 20, name: 'Kotak Pensil Meja Kayu Multifungsi', price: 30000, img: 'https://images.unsplash.com/photo-1598155523122-3842334d6c1f?auto=format&fit=crop&w=600&q=80', desc: 'Organizer alat tulis untuk merapikan meja kerja atau meja belajar.', rating: 4.7, sold: 520, shop: 'PineCraft ID', stock: 90 },
+  { id: 21, name: 'Cermin Dinding Bingkai Kayu Bulat', price: 210000, img: 'https://images.unsplash.com/photo-1618220179428-22790b46a0eb?auto=format&fit=crop&w=600&q=80', desc: 'Cermin rias dinding dengan bingkai kayu jati belanda yang elegan.', rating: 4.9, sold: 310, shop: 'Kriya Nusantara', stock: 25 },
+  { id: 22, name: 'Partisi Ruangan Kayu (Pembatas Ruang) Lipat', price: 750000, img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80', desc: 'Pembatas ruangan lipat estetik untuk memisahkan ruang tamu dan ruang keluarga.', rating: 4.8, sold: 65, shop: 'Mebel Saudara', stock: 4 },
+  { id: 23, name: 'Kursi Teras / Taman Lipat Portabel', price: 320000, img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=600&q=80', desc: 'Kursi santai lipat untuk bersantai di teras rumah, mudah disimpan.', rating: 4.7, sold: 210, shop: 'Jati Berkah Jepara', stock: 15 },
+  { id: 24, name: 'Kotak Perhiasan Kayu Ukiran Jepara', price: 150000, img: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=600&q=80', desc: 'Kotak simpan aksesoris dengan ukiran asli pengrajin Jepara bagian tutupnya.', rating: 4.9, sold: 195, shop: 'Jati Berkah Jepara', stock: 32 },
+  { id: 25, name: 'Dipan Tempat Tidur Jati Ukuran Queen', price: 2500000, img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80', desc: 'Rangka tempat tidur sangat kokoh dari full kayu jati pilihan.', rating: 4.9, sold: 24, shop: 'Mebel Saudara', stock: 2 },
+  { id: 26, name: 'Rak Buku Sudut (Corner Shelf) Kayu', price: 195000, img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=600&q=80', desc: 'Memanfaatkan sudut kosong rumah Anda untuk menaruh koleksi buku / foto.', rating: 4.6, sold: 180, shop: 'PineCraft ID', stock: 14 },
+  { id: 27, name: 'Meja Makan Keluarga 4 Kursi Jati Belanda', price: 1850000, img: 'https://images.unsplash.com/photo-1617806118233-18e1c0945594?auto=format&fit=crop&w=600&q=80', desc: 'Set meja makan lengkap untuk keluarga kecil dengan desain Scandinavian.', rating: 4.8, sold: 55, shop: 'EcoWood Studio', stock: 5 },
+  { id: 28, name: 'Nampan Sarapan Pagi Kayu (Bed Tray)', price: 135000, img: 'https://images.unsplash.com/photo-1610440042657-612c34d95e9f?auto=format&fit=crop&w=600&q=80', desc: 'Nampan dengan kaki lipat untuk menikmati sarapan nyaman di atas kasur.', rating: 4.9, sold: 285, shop: 'Kriya Nusantara', stock: 45 },
+  { id: 29, name: 'Papan Nama Kayu Custom Ukir (Hiasan Pintu)', price: 65000, img: 'https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?auto=format&fit=crop&w=600&q=80', desc: 'Bisa custom nama Anda, cocok digantung di depan kamar atau pintu rumah.', rating: 4.8, sold: 740, shop: 'Limbah Jadi Karya', stock: 999 },
+  { id: 30, name: 'Hiasan Dinding Geometris Kayu Daur Ulang', price: 250000, img: 'https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=600&q=80', desc: 'Hiasan dinding eksklusif terbuat dari gabungan serbuk dan potongan kayu sisa.', rating: 4.7, sold: 110, shop: 'Limbah Jadi Karya', stock: 10 }
 ];
 
 const BLOCKCHAIN_LOGS = [
@@ -220,6 +221,8 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
   const [showCheckInModal, setShowCheckInModal] = useState(false);
   const [checkedInDays, setCheckedInDays] = useState([1, 2, 3]); 
   const [selectedProduct, setSelectedProduct] = useState(null); // STATE UNTUK DETAIL PRODUK
+  const [blockchainProduct, setBlockchainProduct] = useState(null); // STATE UNTUK BLOCKCHAIN TRACKER
+  const [verificationProduct, setVerificationProduct] = useState(null); // STATE UNTUK POP-UP VERIFIKASI AWAL
 
   const CURRENT_DAY = 4; 
   const WEEK_DAYS = ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'];
@@ -241,6 +244,13 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
   const buyNow = (product) => {
     addToCart(product);
     setActiveTab('cart');
+  };
+
+  // FUNGSI DETEKSI OTOMATIS PRODUK DAUR ULANG ATAU BARU BERDASARKAN DESKRIPSI
+  const isProductRecycled = (product) => {
+    const keywords = ['sisa', 'daur ulang', 'serbuk', 'limbah', 'rustic', 'potongan'];
+    const textToSearch = (product.name + " " + product.desc).toLowerCase();
+    return keywords.some(kw => textToSearch.includes(kw));
   };
 
   // JIKA ADA PRODUK YANG DIPILIH, RENDER HALAMAN DETAIL PRODUK
@@ -353,8 +363,11 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
                       <span>{product.sold} Terjual</span>
                     </div>
                     <div className="mt-3 flex space-x-2">
-                      <button onClick={(e) => { e.stopPropagation(); addToCart(product); }} className="border border-green-600 text-green-600 p-1.5 rounded-sm hover:bg-green-50 transition flex items-center justify-center">
+                      <button onClick={(e) => { e.stopPropagation(); addToCart(product); }} className="border border-green-600 text-green-600 p-1.5 rounded-sm hover:bg-green-50 transition flex items-center justify-center" title="Tambah ke Keranjang">
                         <ShoppingCart size={16}/>
+                      </button>
+                      <button onClick={(e) => { e.stopPropagation(); setVerificationProduct(product); }} className="border border-teal-600 text-teal-600 p-1.5 rounded-sm hover:bg-teal-50 transition flex items-center justify-center" title="Cek Sertifikasi Bahan">
+                        <ShieldCheck size={16}/>
                       </button>
                       <button onClick={(e) => { e.stopPropagation(); buyNow(product); }} className="bg-green-600 text-white flex-grow rounded-sm text-xs md:text-sm font-semibold hover:bg-green-700 transition">
                         Beli Langsung
@@ -421,7 +434,7 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
                           w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all
                           ${isChecked ? 'bg-green-600 text-white shadow-sm' : ''}
                           ${isToday && !isChecked ? 'bg-white border-2 border-green-600 text-green-600 animate-pulse cursor-pointer hover:bg-green-50' : ''}
-                          ${!isChecked && !isToday ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : ''}
+                          ${!isChecked && !isFuture ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : ''}
                         `}
                       >
                         {isChecked ? <CheckCircle size={18} /> : 
@@ -444,6 +457,108 @@ function HomeTab({ setActiveTab, showNotification, coins, setCoins, ecoPayBalanc
               >
                 {checkedInDays.includes(CURRENT_DAY) ? 'Sudah Cek-in Hari Ini' : 'Cek-in Sekarang (+25 Koin)'}
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL POP-UP VERIFIKASI BAHAN (BARU) */}
+      {verificationProduct && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center animate-fade-in p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl relative border border-gray-100 transform transition-all scale-100">
+            <button onClick={() => setVerificationProduct(null)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-800 bg-gray-50 hover:bg-gray-100 rounded-full p-1.5 transition-all z-20">
+              <X size={20} />
+            </button>
+            
+            {isProductRecycled(verificationProduct) ? (
+              <div className="p-8 text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-32 bg-green-50 rounded-b-[50%] -z-10"></div>
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-5 border-4 border-green-100 shadow-lg relative z-10">
+                  <Leaf className="text-green-500" size={48} />
+                </div>
+                <h2 className="text-xl font-extrabold text-green-800 mb-3 leading-tight">Terverifikasi<br/>Daur Ulang Ramah Lingkungan</h2>
+                <p className="text-sm text-gray-600 mb-8 px-2">Produk <strong className="text-gray-800">{verificationProduct.name}</strong> dikerjakan dengan mengolah bahan limbah kayu dan jejaknya tercatat transparan di sistem blockchain kami.</p>
+                <div className="flex gap-3">
+                  <button onClick={() => setVerificationProduct(null)} className="w-1/3 py-3 bg-gray-100 text-gray-600 font-bold rounded-xl hover:bg-gray-200 transition text-sm">Kembali</button>
+                  <button onClick={() => { setBlockchainProduct(verificationProduct); setVerificationProduct(null); }} className="w-2/3 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl hover:from-green-600 hover:to-green-700 shadow-md transition flex items-center justify-center text-sm">
+                    <ShieldCheck size={18} className="mr-2" /> Lihat Blockchain
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="p-8 text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-32 bg-blue-50 rounded-b-[50%] -z-10"></div>
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-5 border-4 border-blue-100 shadow-lg relative z-10">
+                  <Package className="text-blue-500" size={48} />
+                </div>
+                <h2 className="text-xl font-extrabold text-blue-800 mb-3 leading-tight">Produk Baru<br/>(Premium Kriya)</h2>
+                <p className="text-sm text-gray-600 mb-8 px-2">Produk <strong className="text-gray-800">{verificationProduct.name}</strong> dirakit menggunakan material kayu baru berkualitas tinggi (Bukan daur ulang). Tidak terdapat catatan riwayat limbah.</p>
+                <button onClick={() => setVerificationProduct(null)} className="w-full py-3.5 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition shadow-sm text-sm">Kembali ke Katalog</button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {blockchainProduct && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center animate-fade-in p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl relative border border-gray-100">
+            <button onClick={() => setBlockchainProduct(null)} className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-full p-1.5 transition-all z-20">
+              <X size={20} />
+            </button>
+            
+            <div className="bg-green-50 p-6 border-b border-green-100 flex items-center relative overflow-hidden">
+              <ShieldCheck className="text-green-600 mr-3 relative z-10" size={32} />
+              <div className="relative z-10">
+                <h2 className="text-lg font-bold text-green-800 leading-tight">Transparansi Daur Ulang</h2>
+                <p className="text-xs text-green-600 font-medium">Sertifikasi Blockchain EcoCraft</p>
+              </div>
+              <Leaf className="absolute -right-4 -bottom-4 text-green-200 opacity-50" size={80} />
+            </div>
+            
+            <div className="p-6">
+              <p className="text-sm text-gray-600 mb-6">Jejak pengolahan limbah untuk produk:<br/><span className="text-gray-800 font-bold text-base">{blockchainProduct.name}</span></p>
+              
+              <div className="space-y-0 relative">
+                {/* Garis vertikal penghubung */}
+                <div className="absolute left-[11px] top-2 bottom-6 w-0.5 bg-green-200"></div>
+                
+                <div className="relative pl-8 pb-6">
+                  <div className="absolute w-6 h-6 bg-white border-2 border-green-500 rounded-full left-0 top-0 flex items-center justify-center z-10">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="font-bold text-gray-800 text-sm">Pengumpulan Limbah Kayu</div>
+                    <span className="text-[9px] bg-green-100 border border-green-200 px-2 py-0.5 rounded text-green-700 font-bold">Verified</span>
+                  </div>
+                  <div className="text-[10px] text-gray-500 mb-1">TxHash: <span className="text-teal-600 font-mono">0x{(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}...</span></div>
+                  <div className="text-xs text-gray-600">Limbah disetorkan oleh Mitra UMKM ke Pusat Kriya.</div>
+                </div>
+
+                <div className="relative pl-8 pb-6">
+                  <div className="absolute w-6 h-6 bg-white border-2 border-green-500 rounded-full left-0 top-0 flex items-center justify-center z-10">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="font-bold text-gray-800 text-sm">Proses Daur Ulang & Desain</div>
+                    <span className="text-[9px] bg-green-100 border border-green-200 px-2 py-0.5 rounded text-green-700 font-bold">Verified</span>
+                  </div>
+                  <div className="text-[10px] text-gray-500 mb-1">TxHash: <span className="text-teal-600 font-mono">0x{(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}...</span></div>
+                  <div className="text-xs text-gray-600">Limbah diproses menjadi material dasar dan didesain ulang.</div>
+                </div>
+
+                <div className="relative pl-8">
+                  <div className="absolute w-6 h-6 bg-white border-2 border-green-500 rounded-full left-0 top-0 flex items-center justify-center z-10 shadow-[0_0_10px_rgba(34,197,94,0.4)]">
+                    <CheckCircle className="text-green-500" size={20} />
+                  </div>
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="font-bold text-gray-800 text-sm">Produk Selesai Dibuat</div>
+                    <span className="text-[9px] bg-green-100 border border-green-200 px-2 py-0.5 rounded text-green-700 font-bold">Verified</span>
+                  </div>
+                  <div className="text-[10px] text-gray-500 mb-1">TxHash: <span className="text-teal-600 font-mono">0x{(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}...</span></div>
+                  <div className="text-xs text-gray-600">Aset fisik selesai dibuat dan dicatat sebagai produk ramah lingkungan.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1214,9 +1329,16 @@ function WasteBlockchainTab({ coins, setCoins, showNotification }) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 animate-fade-in">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold text-gray-800 mb-3">Tukar Limbah & Blockchain Tracker</h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">Kami mengadopsi teknologi Blockchain untuk transparansi proses daur ulang. Tukar limbah usaha Anda, dapatkan Koin Gamifikasi, dan lacak progresnya secara aman.</p>
+      <div className="relative bg-gradient-to-r from-green-900 to-green-800 text-white rounded-3xl pt-10 pb-12 px-6 md:pt-14 md:pb-16 mb-10 overflow-hidden shadow-xl text-center">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <img src={bgKu} alt="Background" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative z-10">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 tracking-tight">Tukar Limbah & Blockchain Tracker</h1>
+          <p className="max-w-2xl mx-auto text-green-100 text-sm md:text-base leading-relaxed">
+            Kami mengadopsi teknologi Blockchain untuk transparansi proses daur ulang. Tukar limbah usaha Anda, dapatkan Koin Gamifikasi, dan lacak progresnya secara aman.
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -1248,18 +1370,11 @@ function WasteBlockchainTab({ coins, setCoins, showNotification }) {
             <div className="bg-white/40 rounded-xl p-4 flex justify-between items-center backdrop-blur-sm"><span className="font-medium text-lg">Total Saldo:</span><span className="text-3xl font-black">{coins} <span className="text-sm font-normal">Koin</span></span></div>
           </div>
 
-          <div className="bg-gray-900 text-gray-100 p-6 rounded-2xl shadow-md font-mono text-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none"><LinkIcon size={100} /></div>
-            <h3 className="font-bold text-lg mb-4 flex items-center text-green-400"><Cpu className="mr-2"/> Live Blockchain Ledger</h3>
-            <div className="space-y-4">
-              {BLOCKCHAIN_LOGS.map((log, idx) => (
-                <div key={idx} className="border-l-2 border-green-500 pl-4 py-1">
-                  <div className="flex justify-between items-center mb-1"><span className="text-xs text-gray-400">TxHash: <span className="text-blue-300">{log.id}</span></span><span className="text-xs bg-gray-800 px-2 py-1 rounded">{log.date}</span></div>
-                  <div className="flex justify-between"><span>{log.type}</span><span className={`font-bold ${log.coins.startsWith('+') ? 'text-yellow-400' : 'text-red-400'}`}>{log.coins}</span></div>
-                  <div className="text-xs text-green-300 mt-1">Status: {log.status}</div>
-                </div>
-              ))}
-            </div>
+          <div className="bg-white p-6 rounded-2xl shadow-md border border-green-100 bg-green-50">
+            <h3 className="font-bold text-green-800 mb-2 flex items-center"><Recycle className="mr-2 text-green-600"/> Dampak Lingkungan Anda</h3>
+            <p className="text-sm text-green-700">
+              Dengan menukarkan limbah, Anda telah berpartisipasi mengurangi jejak karbon. Pengolahan limbah menjadi barang jadi kini dapat dilacak langsung melalui fitur <b>Tracker Blockchain</b> yang tersedia di setiap kartu produk pada menu Beranda / Katalog.
+            </p>
           </div>
         </div>
       </div>
