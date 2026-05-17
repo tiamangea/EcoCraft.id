@@ -17,17 +17,58 @@ import {
 import logoKu from './assets/logo.png';
 import bgKu from './assets/Background.jpeg';
 // --- DATA PRODUK LENGKAP ---
+// --- DATA PRODUK LENGKAP (LINK GAMBAR 100% VALID & SESUAI JUDUL) ---
 const INITIAL_PRODUCTS = [
-  { id: 1, name: 'Set Sendok Garpu Kayu Mahoni', price: 45000, rating: 4.8, sold: 340, category: 'Dapur', isRecycled: true, img: 'https://images.unsplash.com/photo-1581403057193-4e35fbb9a1a3?auto=format&fit=crop&w=600&q=80', desc: 'Set peralatan makan kayu daur ulang food-grade yang elegan.', shop: 'UMKM EcoCraft', stock: 15 },
-  { id: 2, name: 'Kursi Kayu Jati Minimalis', price: 450000, rating: 4.9, sold: 120, category: 'Furnitur', isRecycled: false, img: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=600&q=80', desc: 'Kursi santai dari kayu jati baru pilihan dengan finishing natural.', shop: 'UMKM EcoCraft', stock: 5 },
-  { id: 3, name: 'Meja Kopi Estetik (Limbah Palet)', price: 250000, rating: 4.7, sold: 85, category: 'Furnitur', isRecycled: true, img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80', desc: 'Meja kopi bergaya industrial rustic yang diolah dari limbah palet berkualitas.', shop: 'UMKM EcoCraft', stock: 12 },
-  { id: 4, name: 'Jam Tangan Kayu Eboni', price: 350000, rating: 4.9, sold: 210, category: 'Aksesoris', isRecycled: false, img: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80', desc: 'Jam tangan eksklusif dari kayu eboni asli yang ringan dan stylish.', shop: 'UMKM EcoCraft', stock: 8 },
-  { id: 5, name: 'Rak Dinding Hexagon Gantung', price: 120000, rating: 4.6, sold: 450, category: 'Dekorasi', isRecycled: true, img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=600&q=80', desc: 'Rak dinding unik untuk tanaman atau hiasan, dibuat dari sisa potongan kayu mebel.', shop: 'UMKM EcoCraft', stock: 30 },
-  { id: 6, name: 'Mainan Edukasi Anak (Balok Kayu)', price: 85000, rating: 4.8, sold: 310, category: 'Mainan', isRecycled: false, img: 'https://images.unsplash.com/photo-1558066804-d576a0a0f5a7?auto=format&fit=crop&w=600&q=80', desc: 'Mainan anak susun balok, dicat dengan pewarna air non-toxic yang aman.', shop: 'UMKM EcoCraft', stock: 45 },
-  { id: 7, name: 'Nampan Saji Kayu Pinus (Tray)', price: 65000, rating: 4.5, sold: 180, category: 'Dapur', isRecycled: true, img: 'https://images.unsplash.com/photo-1610705180800-4b36070bb8fb?auto=format&fit=crop&w=600&q=80', desc: 'Nampan saji estetik dari limbah kayu pinus yang dikeringkan sempurna.', shop: 'UMKM EcoCraft', stock: 20 },
-  { id: 8, name: 'Lampu Meja Hias Rustic', price: 185000, rating: 4.7, sold: 95, category: 'Dekorasi', isRecycled: true, img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', desc: 'Lampu tidur dengan dudukan kayu daur ulang bernuansa hangat.', shop: 'UMKM EcoCraft', stock: 15 },
-  { id: 9, name: 'Talenan Dapur Kayu Mahoni Solid', price: 55000, rating: 4.9, sold: 540, category: 'Dapur', isRecycled: false, img: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?auto=format&fit=crop&w=600&q=80', desc: 'Talenan tebal anti retak, terbuat dari kayu mahoni baru.', shop: 'Kriya Nusantara', stock: 80 },
-  { id: 10, name: 'Tatakan Gelas (Coaster) Potongan Kayu', price: 25000, rating: 4.8, sold: 890, category: 'Dekorasi', isRecycled: true, img: 'https://images.unsplash.com/photo-1611080665942-886d34bba4ce?auto=format&fit=crop&w=600&q=80', desc: 'Tatakan gelas dari sisa ranting/batang kayu asli. Estetik dan alami.', shop: 'PineCraft ID', stock: 150 }
+  { 
+    id: 1, name: 'Set Sendok Garpu Kayu Mahoni', price: 45000, rating: 4.8, sold: 340, category: 'Dapur', isRecycled: true, 
+    img: 'https://dekayu.id/wp-content/uploads/2021/06/2020_0316_14335400.jpg', 
+    desc: 'Set peralatan makan kayu daur ulang food-grade yang elegan.', shop: 'UMKM EcoCraft', stock: 15 
+  },
+  { 
+    id: 2, name: 'Kursi Kayu Jati Minimalis', price: 450000, rating: 4.9, sold: 120, category: 'Furnitur', isRecycled: false, 
+    img: 'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80', 
+    desc: 'Kursi santai dari kayu jati baru pilihan dengan finishing natural.', shop: 'UMKM EcoCraft', stock: 5 
+  },
+  { 
+    id: 3, name: 'Meja Kopi Estetik (Limbah Palet)', price: 250000, rating: 4.7, sold: 85, category: 'Furnitur', isRecycled: true, 
+    img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80', 
+    desc: 'Meja kopi bergaya industrial rustic yang diolah dari limbah palet berkualitas.', shop: 'UMKM EcoCraft', stock: 12 
+  },
+  { 
+    id: 4, name: 'Jam Tangan Kayu Eboni', price: 350000, rating: 4.9, sold: 210, category: 'Aksesoris', isRecycled: false, 
+    img: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80', 
+    desc: 'Jam tangan eksklusif dari kayu eboni asli yang ringan dan stylish.', shop: 'UMKM EcoCraft', stock: 8 
+  },
+  { 
+    id: 5, name: 'Rak Dinding Hexagon Gantung', price: 120000, rating: 4.6, sold: 450, category: 'Dekorasi', isRecycled: true, 
+    img: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=600&q=80', 
+    desc: 'Rak dinding unik untuk tanaman atau hiasan, dibuat dari sisa potongan kayu mebel.', shop: 'UMKM EcoCraft', stock: 30 
+  },
+  { 
+    id: 6, name: 'Mainan Edukasi Anak (Balok Kayu)', price: 85000, rating: 4.8, sold: 310, category: 'Mainan', isRecycled: false, 
+    img: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80', 
+    desc: 'Mainan anak susun balok, dicat dengan pewarna air non-toxic yang aman.', shop: 'UMKM EcoCraft', stock: 45 
+  },
+  { 
+    id: 7, name: 'Nampan Saji Kayu Pinus (Tray)', price: 65000, rating: 4.5, sold: 180, category: 'Dapur', isRecycled: true, 
+    img: 'https://dekayu.id/wp-content/uploads/2021/08/Nampan-Kayu-Pinus.jpg', 
+    desc: 'Nampan saji estetik dari limbah kayu pinus yang dikeringkan sempurna.', shop: 'UMKM EcoCraft', stock: 20 
+  },
+  { 
+    id: 8, name: 'Lampu Meja Hias Rustic', price: 185000, rating: 4.7, sold: 95, category: 'Dekorasi', isRecycled: true, 
+    img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', 
+    desc: 'Lampu tidur dengan dudukan kayu daur ulang bernuansa hangat.', shop: 'UMKM EcoCraft', stock: 15 
+  },
+  { 
+    id: 9, name: 'Talenan Dapur Kayu Mahoni Solid', price: 55000, rating: 4.9, sold: 540, category: 'Dapur', isRecycled: false, 
+    img: 'https://down-id.img.susercontent.com/file/id-11134207-7r98t-lysipyslixqd73_tn', 
+    desc: 'Talenan tebal anti retak, terbuat dari kayu mahoni baru.', shop: 'Kriya Nusantara', stock: 80 
+  },
+  { 
+    id: 10, name: 'Tatakan Gelas (Coaster) Potongan Kayu', price: 25000, rating: 4.8, sold: 890, category: 'Dekorasi', isRecycled: true, 
+    img: 'https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/product-1/2020/6/18/664925355/664925355_ed3325fc-c329-4646-86af-0e4b8daa101c_1860_1860.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.jpeg?lk3s=0ccea506&x-expires=1779021155&x-signature=AYuPWRemAUcMjY5dyBVtNQ%2BbH6I%3D&x-signature-webp=r0%2Bch%2B7XOROk%2FV2ykobAnf1GVFo%3D', 
+    desc: 'Tatakan gelas dari sisa ranting/batang kayu asli. Estetik dan alami.', shop: 'PineCraft ID', stock: 150 
+  }
 ];
 
 const BERITA_UMKM = [
@@ -54,7 +95,7 @@ export default function App() {
     username: "UMKM EcoCraft.id",
     email: "admin@ecocraft.id",
     phone: "081234567890",
-    description: "EcoCraft adalah UMKM Kriya Kayu asal Jepara yang berdedikasi menciptakan karya furnitur dan dekorasi ramah lingkungan. Kami memadukan seni ukir tradisional dengan teknologi sirkuler untuk masa depan yang lebih hijau.",
+    description: "WOODISHKAYU adalah UMKM Kriya Kayu asal Jepara yang berdedikasi menciptakan karya furnitur dan dekorasi ramah lingkungan. Kami memadukan seni ukir tradisional dengan teknologi sirkuler untuk masa depan yang lebih hijau.",
     visi: "Menjadi pelopor UMKM Kriya Kayu sirkuler terbesar di Indonesia yang mengurangi jejak karbon melalui pemanfaatan limbah kayu secara maksimal.",
     misi: "1. Memberdayakan pengrajin lokal Jepara dengan inovasi digital.\n2. Mengolah 100% sisa produksi menjadi produk bernilai guna.\n3. Mengedukasi masyarakat tentang pentingnya gaya hidup ramah lingkungan melalui furnitur berkelanjutan."
   });
@@ -262,7 +303,7 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-green-900/90"></div>
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 leading-tight">Ubah Limbah Jadi Berkah,<br/>Belanja Lebih Murah</h1>
-          <p className="text-base md:text-lg text-green-100 mb-10 max-w-2xl mx-auto font-medium">Platform sirkuler UMKM. Beli furnitur ramah lingkungan, atau tukar limbah kayu Anda jadi Koin cerdas via Blockchain.</p>
+          <p className="text-base md:text-lg text-green-100 mb-10 max-w-2xl mx-auto font-medium">Platform ssirkular UMKM. Dukung UMKM lebih baik dengan mengelola limbah dan memanfaatkannya menjadi produk baru.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => setActiveTab('catalog')} className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"><Store className="mr-2" size={20}/> Lihat Katalog</button>
@@ -320,7 +361,7 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
             <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">{shopInfo.misi}</p>
           </div>
           <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-  // ...
+  
   <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
     <img src="/misi.jpg" alt="Misi" className="w-full h-72 object-cover" />
   </div>
