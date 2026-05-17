@@ -301,9 +301,10 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
 
         {/* Baris 1: Gambar Kiri, Visi Kanan */}
         <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
-          <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-            <img src="visi.jpg" alt="Visi" className="w-full h-72 object-cover" />
-          </div>
+  <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+    {/* Mengambil dari folder public wajib menambahkan garis miring (/) di depannya */}
+    <img src="/visi.jpg" alt="Visi" className="w-full h-72 object-cover" />
+  </div>
           <div className="w-full md:w-1/2 px-4">
             <div className="bg-green-50 text-green-700 font-extrabold px-4 py-2 rounded-lg inline-block mb-4 shadow-sm">VISI KAMI</div>
             <h3 className="text-3xl font-bold text-gray-800 mb-4 leading-snug">Menghadirkan Keindahan Melalui Keberlanjutan.</h3>
@@ -318,9 +319,12 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
             <h3 className="text-3xl font-bold text-gray-800 mb-4 leading-snug">Langkah Nyata untuk Bumi & Ekonomi.</h3>
             <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">{shopInfo.misi}</p>
           </div>
-          <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-            <img src="misi.jpg" alt="Misi" className="w-full h-72 object-cover" />
-          </div>
+          <div className="flex flex-col-reverse md:flex-row items-center gap-10">
+  // ...
+  <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+    <img src="/misi.jpg" alt="Misi" className="w-full h-72 object-cover" />
+  </div>
+</div>
         </div>
       </div>
 
