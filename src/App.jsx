@@ -9,19 +9,21 @@ import {
 } from 'lucide-react';
 
 // =========================================================================
-// PENTING: SAAT DI-COPY KE VS CODE, HAPUS 2 BARIS LINK ONLINE DI BAWAH INI,
-// LALU GANTI MENJADI IMPORT LOKAL SEPERTI INI:
-// import logoKu from './assets/logo.png';
-// import bgKu from './assets/Background.jpeg';
-// =========================================================================
+// CATATAN: Untuk mencegah error pada layar pratinjau saat ini, 
+// pemanggilan gambar diatur ke URL online. Saat menyalin ke VS Code Anda, 
+// silakan HAPUS 4 BARIS di bawah ini, dan aktifkan import lokal Anda:
+//
 import logoKu from './assets/logo.png';
-import bgKu from './assets/Background.jpeg';
-// --- DATA PRODUK LENGKAP ---
+import bgKu from './assets/Background.jpg';
+import gambarVisi from './assets/visi.jpg';
+import gambarMisi from './assets/misi.jpg';
+// =========================================================================
+
 // --- DATA PRODUK LENGKAP (LINK GAMBAR 100% VALID & SESUAI JUDUL) ---
 const INITIAL_PRODUCTS = [
   { 
     id: 1, name: 'Set Sendok Garpu Kayu Mahoni', price: 45000, rating: 4.8, sold: 340, category: 'Dapur', isRecycled: true, 
-    img: 'https://dekayu.id/wp-content/uploads/2021/06/2020_0316_14335400.jpg', 
+    img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c848?auto=format&fit=crop&w=600&q=80', 
     desc: 'Set peralatan makan kayu daur ulang food-grade yang elegan.', shop: 'UMKM EcoCraft', stock: 15 
   },
   { 
@@ -51,7 +53,7 @@ const INITIAL_PRODUCTS = [
   },
   { 
     id: 7, name: 'Nampan Saji Kayu Pinus (Tray)', price: 65000, rating: 4.5, sold: 180, category: 'Dapur', isRecycled: true, 
-    img: 'https://dekayu.id/wp-content/uploads/2021/08/Nampan-Kayu-Pinus.jpg', 
+    img: 'https://images.unsplash.com/photo-1585501861053-cb20668f44de?auto=format&fit=crop&w=600&q=80', 
     desc: 'Nampan saji estetik dari limbah kayu pinus yang dikeringkan sempurna.', shop: 'UMKM EcoCraft', stock: 20 
   },
   { 
@@ -61,20 +63,20 @@ const INITIAL_PRODUCTS = [
   },
   { 
     id: 9, name: 'Talenan Dapur Kayu Mahoni Solid', price: 55000, rating: 4.9, sold: 540, category: 'Dapur', isRecycled: false, 
-    img: 'https://down-id.img.susercontent.com/file/id-11134207-7r98t-lysipyslixqd73_tn', 
+    img: 'https://images.unsplash.com/photo-1593926879836-ec1cbcd41bc3?auto=format&fit=crop&w=600&q=80', 
     desc: 'Talenan tebal anti retak, terbuat dari kayu mahoni baru.', shop: 'Kriya Nusantara', stock: 80 
   },
   { 
     id: 10, name: 'Tatakan Gelas (Coaster) Potongan Kayu', price: 25000, rating: 4.8, sold: 890, category: 'Dekorasi', isRecycled: true, 
-    img: 'https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/product-1/2020/6/18/664925355/664925355_ed3325fc-c329-4646-86af-0e4b8daa101c_1860_1860.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.jpeg?lk3s=0ccea506&x-expires=1779021155&x-signature=AYuPWRemAUcMjY5dyBVtNQ%2BbH6I%3D&x-signature-webp=r0%2Bch%2B7XOROk%2FV2ykobAnf1GVFo%3D', 
+    img: 'https://images.unsplash.com/photo-1611080665942-886d34bba4ce?auto=format&fit=crop&w=600&q=80', 
     desc: 'Tatakan gelas dari sisa ranting/batang kayu asli. Estetik dan alami.', shop: 'PineCraft ID', stock: 150 
   }
 ];
 
 const BERITA_UMKM = [
-  { id: 1, title: "Pemerintah Siapkan Kucuran Dana Rp 300 Triliun untuk KUR UMKM 2026", source: "Kemenkeu", date: "14 Mei 2026", excerpt: "Program pembiayaan ini diharapkan dapat mengakselerasi pertumbuhan UMKM di sektor kriya dan kuliner pasca krisis global.", link: "#" },
-  { id: 2, title: "Transformasi Digital: 80% UMKM Kriya Kini Gunakan Pembayaran QRIS", source: "Bank Indonesia", date: "12 Mei 2026", excerpt: "Kemudahan transaksi menjadi alasan utama para pengrajin lokal beralih ke pembayaran non-tunai di toko fisik maupun pameran.", link: "#" },
-  { id: 3, title: "Ekspor Produk Kayu Olahan UMKM Jepara Tembus Pasar Eropa", source: "Kemendag", date: "10 Mei 2026", excerpt: "Desain ramah lingkungan dan sirkuler menjadi daya tarik utama mebel kayu asal Indonesia di mata konsumen internasional yang peduli lingkungan.", link: "#" }
+  { id: 1, title: "Pemerintah Siapkan Kucuran Dana Rp 300 Triliun untuk KUR UMKM 2026", source: "Kemenkeu", date: "14 Mei 2026", excerpt: "Program pembiayaan ini diharapkan dapat mengakselerasi pertumbuhan UMKM di sektor kriya dan kuliner pasca krisis global.", link: "https://www.google.com/search?q=Pemerintah+Siapkan+Kucuran+Dana+Rp+300+Triliun+untuk+KUR+UMKM+2026" },
+  { id: 2, title: "Transformasi Digital: 80% UMKM Kriya Kini Gunakan Pembayaran QRIS", source: "Bank Indonesia", date: "12 Mei 2026", excerpt: "Kemudahan transaksi menjadi alasan utama para pengrajin lokal beralih ke pembayaran non-tunai di toko fisik maupun pameran.", link: "https://www.google.com/search?q=Transformasi+Digital+UMKM+Kriya+Kini+Gunakan+Pembayaran+QRIS" },
+  { id: 3, title: "Ekspor Produk Kayu Olahan UMKM Jepara Tembus Pasar Eropa", source: "Kemendag", date: "10 Mei 2026", excerpt: "Desain ramah lingkungan dan sirkuler menjadi daya tarik utama mebel kayu asal Indonesia di mata konsumen internasional yang peduli lingkungan.", link: "https://www.google.com/search?q=Ekspor+Produk+Kayu+Olahan+UMKM+Jepara+Tembus+Pasar+Eropa" }
 ];
 
 const formatRp = (num) => 'Rp' + num.toLocaleString('id-ID');
@@ -128,9 +130,9 @@ export default function App() {
   const NavItem = ({ id, icon: Icon, label, badge, hidden }) => {
     if (hidden) return null;
     return (
-      <button onClick={() => { setActiveTab(id); setIsMobileMenuOpen(false); }} className={`relative flex items-center space-x-2 px-3 py-2 rounded-xl transition-all ${activeTab === id ? 'bg-green-600 text-white shadow-md' : 'text-gray-600 hover:bg-green-50 hover:text-green-600'}`}>
-        <Icon size={16} />
-        <span className="font-medium text-sm hidden lg:block">{label}</span>
+      <button onClick={() => { setActiveTab(id); setIsMobileMenuOpen(false); }} className={`relative flex items-center justify-start w-full md:w-auto space-x-3 px-4 py-2.5 rounded-xl transition-all ${activeTab === id ? 'bg-[#C29666] text-white shadow-md' : 'text-gray-600 hover:bg-[#FCF9F5] hover:text-[#C29666]'}`}>
+        <Icon size={18} />
+        <span className="font-medium text-sm block md:hidden lg:block">{label}</span>
         {badge > 0 && <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white">{badge}</span>}
       </button>
     );
@@ -139,7 +141,7 @@ export default function App() {
   const MobileNavItem = ({ id, icon: Icon, label, badge, hidden }) => {
     if (hidden) return null;
     return (
-      <button onClick={() => setActiveTab(id)} className={`flex-1 flex flex-col items-center justify-center py-2 transition-colors ${activeTab === id ? 'text-green-600' : 'text-gray-400 hover:text-green-500'}`}>
+      <button onClick={() => setActiveTab(id)} className={`flex-1 flex flex-col items-center justify-center py-2 transition-colors ${activeTab === id ? 'text-[#C29666]' : 'text-gray-400 hover:text-[#D6AC82]'}`}>
         <div className="relative">
           <Icon size={22} className={activeTab === id ? 'fill-current' : ''} />
           {badge > 0 && <span className="absolute -top-1.5 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white">{badge}</span>}
@@ -155,9 +157,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
-            {/* LOGO (TANPA DAUN) */}
+            {/* LOGO */}
             <div className="flex items-center cursor-pointer" onClick={() => setActiveTab('home')}>
-              <span className="font-extrabold text-2xl text-gray-800 tracking-tight">EcoCraft<span className="text-green-600">.id</span></span>
+              <span className="font-extrabold text-2xl text-gray-800 tracking-tight">EcoCraft<span className="text-[#C29666]">.id</span></span>
             </div>
 
             {/* DESKTOP NAVIGATION */}
@@ -166,6 +168,7 @@ export default function App() {
                 <>
                   <NavItem id="home" icon={Home} label="Beranda" />
                   <NavItem id="catalog" icon={Store} label="Katalog" />
+                  <NavItem id="news" icon={Newspaper} label="Berita" />
                   <NavItem id="contact" icon={Phone} label="Kontak" />
                   <NavItem id="waste" icon={Recycle} label="Tukar Limbah" />
                 </>
@@ -181,12 +184,12 @@ export default function App() {
 
             <div className="hidden md:flex items-center space-x-2">
               {userRole === 'buyer' && (
-                <button onClick={() => setActiveTab('cart')} className={`relative p-2 rounded-full transition-colors ${activeTab === 'cart' ? 'bg-green-100 text-green-700' : 'text-gray-500 hover:bg-gray-100'}`} title="Keranjang">
+                <button onClick={() => setActiveTab('cart')} className={`relative p-2 rounded-full transition-colors ${activeTab === 'cart' ? 'bg-[#F5EBE1] text-[#A67B4F]' : 'text-gray-500 hover:bg-gray-100'}`} title="Keranjang">
                   <ShoppingCart size={22} />
                   {totalCartItems > 0 && <span className="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white">{totalCartItems}</span>}
                 </button>
               )}
-              <button onClick={() => setActiveTab('profile')} className={`p-2 rounded-full transition-colors flex items-center ${activeTab === 'profile' ? 'bg-green-100 text-green-700' : 'text-gray-500 hover:bg-gray-100'}`} title="Profil Saya">
+              <button onClick={() => setActiveTab('profile')} className={`p-2 rounded-full transition-colors flex items-center ${activeTab === 'profile' ? 'bg-[#F5EBE1] text-[#A67B4F]' : 'text-gray-500 hover:bg-gray-100'}`} title="Profil Saya">
                 <User size={22} className="mr-1" /> <span className="text-sm font-semibold">Profil</span>
               </button>
             </div>
@@ -212,6 +215,7 @@ export default function App() {
               <>
                 <NavItem id="home" icon={Home} label="Beranda" />
                 <NavItem id="catalog" icon={Store} label="Katalog" />
+                <NavItem id="news" icon={Newspaper} label="Berita" />
                 <NavItem id="contact" icon={Phone} label="Kontak" />
                 <NavItem id="waste" icon={Recycle} label="Tukar Limbah" />
                 <NavItem id="cart" icon={ShoppingCart} label="Keranjang" badge={totalCartItems} />
@@ -232,7 +236,7 @@ export default function App() {
       {/* GLOBAL NOTIFICATION */}
       {notification && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full shadow-2xl z-[70] flex items-center animate-fade-in text-sm font-medium w-max max-w-[90vw]">
-          <CheckCircle size={18} className="mr-2 text-green-400 flex-shrink-0" />
+          <CheckCircle size={18} className="mr-2 text-[#C29666] flex-shrink-0" />
           <span className="truncate">{notification}</span>
         </div>
       )}
@@ -241,6 +245,7 @@ export default function App() {
       <main className="flex-grow pb-20 md:pb-8">
         {userRole === 'buyer' && activeTab === 'home' && <HomeBuyerTab setActiveTab={setActiveTab} shopInfo={shopInfo} coins={coins} setCoins={setCoins} ecoPayBalance={ecoPayBalance} showNotification={showNotification} />}
         {userRole === 'buyer' && activeTab === 'catalog' && <CatalogTab products={products} role={userRole} addToCart={addToCart} setActiveTab={setActiveTab} />}
+        {userRole === 'buyer' && activeTab === 'news' && <NewsTab />}
         {userRole === 'buyer' && activeTab === 'contact' && <ContactTab shopInfo={shopInfo} />}
         {userRole === 'buyer' && activeTab === 'cart' && <CartTab cart={cart} setCart={setCart} showNotification={showNotification} setActiveTab={setActiveTab} ecoPayBalance={ecoPayBalance} setEcoPayBalance={setEcoPayBalance} coins={coins} setCoins={setCoins} />}
         {userRole === 'buyer' && activeTab === 'waste' && <WasteTab coins={coins} setCoins={setCoins} showNotification={showNotification} />}
@@ -298,36 +303,36 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
   return (
     <div className="animate-fade-in pb-12">
       {/* Hero Section & Widget */}
-      <div className="bg-gradient-to-r from-green-900 to-green-800 text-white pt-16 pb-24 px-4 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#6E4B2B] to-[#855F3A] text-white pt-16 pb-24 px-4 relative overflow-hidden">
         <img src={bgKu} className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-green-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#6E4B2B]/90"></div>
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 leading-tight">Ubah Limbah Jadi Berkah,<br/>Belanja Lebih Murah</h1>
-          <p className="text-base md:text-lg text-green-100 mb-10 max-w-2xl mx-auto font-medium">Platform ssirkular UMKM. Dukung UMKM lebih baik dengan mengelola limbah dan memanfaatkannya menjadi produk baru.</p>
+          <p className="text-base md:text-lg text-[#F5EBE1] mb-10 max-w-2xl mx-auto font-medium">Platform sirkuler UMKM. Dukung UMKM lebih baik dengan mengelola limbah dan memanfaatkannya menjadi produk baru.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => setActiveTab('catalog')} className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"><Store className="mr-2" size={20}/> Lihat Katalog</button>
-            <button onClick={() => setActiveTab('waste')} className="bg-white text-green-800 font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"><Recycle className="mr-2" size={20}/> Tukar Limbah</button>
+            <button onClick={() => setActiveTab('catalog')} className="bg-[#D6AC82] hover:bg-[#C29666] text-white font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"><Store className="mr-2" size={20}/> Lihat Katalog</button>
+            <button onClick={() => setActiveTab('waste')} className="bg-white text-[#855F3A] font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"><Recycle className="mr-2" size={20}/> Tukar Limbah</button>
           </div>
         </div>
         
         {/* WIDGETS */}
         <div className="relative z-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-4 flex items-center justify-between w-full max-w-2xl mx-auto shadow-2xl">
           <button onClick={() => setShowQRScanner(true)} className="flex flex-col items-center group w-1/3 p-2 hover:bg-white/5 rounded-2xl transition">
-            <div className="bg-white text-green-900 p-3 rounded-2xl mb-2 shadow-sm group-hover:scale-110 transition-transform"><QrCode size={24}/></div>
+            <div className="bg-white text-[#6E4B2B] p-3 rounded-2xl mb-2 shadow-sm group-hover:scale-110 transition-transform"><QrCode size={24}/></div>
             <span className="text-xs font-bold text-white tracking-wide">Scan QRIS</span>
           </button>
           <div className="w-px h-16 bg-white/20"></div>
           <button className="flex flex-col items-center group w-1/3 p-2 hover:bg-white/5 rounded-2xl transition">
             <div className="bg-blue-500 text-white p-3 rounded-2xl mb-2 shadow-sm group-hover:scale-110 transition-transform relative"><Wallet size={24}/></div>
-            <span className="text-[10px] text-green-100 mb-0.5">Saldo EcoPay</span>
+            <span className="text-[10px] text-[#F5EBE1] mb-0.5">Saldo EcoPay</span>
             <span className="text-sm font-bold text-white">Rp{(ecoPayBalance).toLocaleString('id-ID')}</span>
           </button>
           <div className="w-px h-16 bg-white/20"></div>
           <button onClick={() => setShowCheckInModal(true)} className="flex flex-col items-center group w-1/3 p-2 hover:bg-white/5 rounded-2xl transition relative">
             {!checkedInDays.includes(CURRENT_DAY) && <span className="absolute top-2 right-6 flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></span>}
             <div className="bg-yellow-400 text-yellow-900 p-3 rounded-2xl mb-2 shadow-sm group-hover:scale-110 transition-transform"><CalendarCheck size={24}/></div>
-            <span className="text-[10px] text-green-100 mb-0.5">Total Koin</span>
+            <span className="text-[10px] text-[#F5EBE1] mb-0.5">Total Koin</span>
             <span className="text-sm font-bold text-white">{checkedInDays.includes(CURRENT_DAY) ? 'Sudah Cek-in' : 'Cek-in Harian'}</span>
           </button>
         </div>
@@ -342,12 +347,11 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
 
         {/* Baris 1: Gambar Kiri, Visi Kanan */}
         <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
-  <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-    {/* Mengambil dari folder public wajib menambahkan garis miring (/) di depannya */}
-    <img src="/visi.jpg" alt="Visi" className="w-full h-72 object-cover" />
-  </div>
+          <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+            <img src={gambarVisi} alt="Visi" className="w-full h-72 object-cover" />
+          </div>
           <div className="w-full md:w-1/2 px-4">
-            <div className="bg-green-50 text-green-700 font-extrabold px-4 py-2 rounded-lg inline-block mb-4 shadow-sm">VISI KAMI</div>
+            <div className="bg-[#FCF9F5] text-[#A67B4F] font-extrabold px-4 py-2 rounded-lg inline-block mb-4 shadow-sm">VISI KAMI</div>
             <h3 className="text-3xl font-bold text-gray-800 mb-4 leading-snug">Menghadirkan Keindahan Melalui Keberlanjutan.</h3>
             <p className="text-gray-600 leading-relaxed text-lg">{shopInfo.visi}</p>
           </div>
@@ -356,16 +360,15 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
         {/* Baris 2: Misi Kiri, Gambar Kanan */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-10">
           <div className="w-full md:w-1/2 px-4">
-            <div className="bg-blue-50 text-blue-700 font-extrabold px-4 py-2 rounded-lg inline-block mb-4 shadow-sm">MISI KAMI</div>
+            <div className="bg-[#FCF9F5] text-[#A67B4F] font-extrabold px-4 py-2 rounded-lg inline-block mb-4 shadow-sm">MISI KAMI</div>
             <h3 className="text-3xl font-bold text-gray-800 mb-4 leading-snug">Langkah Nyata untuk Bumi & Ekonomi.</h3>
             <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">{shopInfo.misi}</p>
           </div>
           <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-  
-  <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-    <img src="/misi.jpg" alt="Misi" className="w-full h-72 object-cover" />
-  </div>
-</div>
+            <div className="w-full md:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+              <img src={gambarMisi} alt="Misi" className="w-full h-72 object-cover" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -375,7 +378,7 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
           <button onClick={() => setShowQRScanner(false)} className="absolute top-6 right-6 text-white bg-gray-800 p-2 rounded-full hover:bg-gray-700"><X size={24} /></button>
           <h2 className="text-white text-xl font-bold mb-6 flex items-center"><QrCode className="mr-2"/> Scan QRIS</h2>
           <div className="relative w-64 h-64 md:w-80 md:h-80 border-2 border-white/50 rounded-2xl overflow-hidden bg-gray-800">
-            <div className="absolute top-0 left-0 w-full h-1 bg-green-500 shadow-[0_0_15px_3px_rgba(34,197,94,0.5)] animate-scan"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-[#D6AC82] shadow-[0_0_15px_3px_rgba(194,150,102,0.5)] animate-scan"></div>
             <div className="w-full h-full flex flex-col items-center justify-center text-gray-400"><Camera size={48} className="mb-2 opacity-50"/><p className="text-sm">Arahkan kamera ke QR Code</p></div>
           </div>
         </div>
@@ -384,25 +387,25 @@ function HomeBuyerTab({ setActiveTab, shopInfo, coins, setCoins, ecoPayBalance, 
         <div className="fixed inset-0 bg-black/60 z-[70] flex items-center justify-center animate-fade-in p-4 backdrop-blur-sm">
           <div className="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl relative">
             <button onClick={() => setShowCheckInModal(false)} className="absolute top-4 right-4 text-white hover:text-gray-200 bg-white/20 hover:bg-white/30 rounded-full p-1.5 backdrop-blur-sm transition-all z-10"><X size={20} /></button>
-            <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 pt-8 text-center text-white relative">
+            <div className="bg-gradient-to-br from-[#D6AC82] to-[#C29666] p-6 pt-8 text-center text-white relative">
               <h2 className="text-2xl font-bold mb-1">Cek-in Harian</h2>
               <div className="bg-white/20 rounded-2xl py-2 px-5 inline-flex items-center backdrop-blur-sm mt-2 border border-white/30"><Coins className="mr-2 text-yellow-300" size={20} /><span className="font-bold text-xl">{coins}</span></div>
             </div>
             <div className="p-6">
-              <div className="flex justify-between items-center bg-green-50 rounded-xl p-3 mb-5 border border-green-200">
+              <div className="flex justify-between items-center bg-[#FCF9F5] rounded-xl p-3 mb-5 border border-[#EAD9C8]">
                 {WEEK_DAYS.map((dayLabel, idx) => {
                   const dayNumber = idx + 1; const isChecked = checkedInDays.includes(dayNumber); const isToday = dayNumber === CURRENT_DAY;
                   return (
                     <div key={dayLabel} className="flex flex-col items-center relative group">
-                      <span className={`text-[10px] font-bold mb-1 ${isToday ? 'text-green-700' : 'text-gray-400'}`}>{dayLabel}</span>
-                      <button onClick={() => isToday && !isChecked && handleCheckInToday()} className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all ${isChecked ? 'bg-green-600 text-white shadow-sm' : (isToday && !isChecked ? 'bg-white border-2 border-green-600 text-green-600 animate-pulse cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed')}`}>
+                      <span className={`text-[10px] font-bold mb-1 ${isToday ? 'text-[#A67B4F]' : 'text-gray-400'}`}>{dayLabel}</span>
+                      <button onClick={() => isToday && !isChecked && handleCheckInToday()} className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all ${isChecked ? 'bg-[#C29666] text-white shadow-sm' : (isToday && !isChecked ? 'bg-white border-2 border-[#C29666] text-[#C29666] animate-pulse cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed')}`}>
                         {isChecked ? <CheckCircle size={18} /> : (isToday && !isChecked ? <Coins size={18} /> : dayNumber)}
                       </button>
                     </div>
                   );
                 })}
               </div>
-              <button onClick={handleCheckInToday} disabled={checkedInDays.includes(CURRENT_DAY)} className={`w-full py-3.5 rounded-xl font-bold text-white transition shadow-md ${checkedInDays.includes(CURRENT_DAY) ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-green-600 hover:bg-green-700'}`}>{checkedInDays.includes(CURRENT_DAY) ? 'Sudah Cek-in' : 'Cek-in Sekarang (+25 Koin)'}</button>
+              <button onClick={handleCheckInToday} disabled={checkedInDays.includes(CURRENT_DAY)} className={`w-full py-3.5 rounded-xl font-bold text-white transition shadow-md ${checkedInDays.includes(CURRENT_DAY) ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-[#C29666] hover:bg-[#A67B4F]'}`}>{checkedInDays.includes(CURRENT_DAY) ? 'Sudah Cek-in' : 'Cek-in Sekarang (+25 Koin)'}</button>
             </div>
           </div>
         </div>
@@ -418,7 +421,7 @@ function ContactTab({ shopInfo }) {
       <h1 className="text-3xl font-extrabold text-gray-800 mb-8 text-center">Hubungi Kami</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-          <div className="bg-green-100 p-4 rounded-full mb-4"><Mail className="text-green-600 w-8 h-8" /></div>
+          <div className="bg-[#F5EBE1] p-4 rounded-full mb-4"><Mail className="text-[#C29666] w-8 h-8" /></div>
           <h3 className="font-bold text-gray-800 mb-2">Email</h3>
           <p className="text-gray-600 font-medium">{shopInfo.email}</p>
         </div>
@@ -447,24 +450,24 @@ function WasteTab({ coins, setCoins, showNotification }) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 animate-fade-in pb-24">
-      <div className="relative bg-green-900 rounded-3xl p-8 text-white overflow-hidden shadow-lg mb-8">
+      <div className="relative bg-[#6E4B2B] rounded-3xl p-8 text-white overflow-hidden shadow-lg mb-8">
         <img src={bgKu} className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
         <div className="relative z-10">
           <h1 className="text-3xl font-extrabold tracking-tight mb-2">Tukar Limbah Jadi Koin</h1>
-          <p className="text-green-100 text-sm">Dapatkan koin setiap kali menukar limbah kayu untuk potongan belanja.</p>
+          <p className="text-[#F5EBE1] text-sm">Dapatkan koin setiap kali menukar limbah kayu untuk potongan belanja.</p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-          <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center"><Truck className="mr-2 text-green-600"/> Jadwal Penjemputan</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center"><Truck className="mr-2 text-[#C29666]"/> Jadwal Penjemputan</h2>
           <form onSubmit={handlePickUp} className="space-y-4">
-            <select value={wasteType} onChange={(e) => setWasteType(e.target.value)} className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 outline-none focus:border-green-500">
+            <select value={wasteType} onChange={(e) => setWasteType(e.target.value)} className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 outline-none focus:border-[#D6AC82]">
               <option value="serbuk">Serbuk Kayu</option>
               <option value="potongan">Potongan Kayu</option>
             </select>
-            <input type="number" required placeholder="Berat Limbah (Kg)" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 outline-none focus:border-green-500" />
-            <textarea required rows="2" placeholder="Alamat Penjemputan..." className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 outline-none focus:border-green-500"></textarea>
-            <button type="submit" className="w-full bg-green-600 text-white font-bold py-4 rounded-xl hover:bg-green-700 shadow-md transition">Setor Limbah</button>
+            <input type="number" required placeholder="Berat Limbah (Kg)" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 outline-none focus:border-[#D6AC82]" />
+            <textarea required rows="2" placeholder="Alamat Penjemputan..." className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 outline-none focus:border-[#D6AC82]"></textarea>
+            <button type="submit" className="w-full bg-[#C29666] text-white font-bold py-4 rounded-xl hover:bg-[#A67B4F] shadow-md transition">Setor Limbah</button>
           </form>
         </div>
         <div className="bg-gradient-to-b from-yellow-400 to-yellow-500 rounded-3xl p-8 text-yellow-900 shadow-md text-center flex flex-col justify-center relative overflow-hidden">
@@ -509,12 +512,12 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
   return (
     <div className="animate-fade-in pb-24">
       {/* Hero Banner Penjual & Widgets */}
-      <div className="bg-gradient-to-r from-green-900 to-green-800 text-white pt-10 pb-16 px-4 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#6E4B2B] to-[#855F3A] text-white pt-10 pb-16 px-4 relative overflow-hidden">
         <img src={bgKu} className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
         <div className="relative z-10 w-full max-w-4xl mx-auto">
           <h1 className="text-3xl font-extrabold mb-6">Beranda Toko Anda</h1>
           
-          <div className="flex bg-white rounded-xl overflow-hidden shadow-lg p-1.5 mb-8 border-2 border-green-500/50">
+          <div className="flex bg-white rounded-xl overflow-hidden shadow-lg p-1.5 mb-8 border-2 border-[#D6AC82]/50">
             <Search className="text-gray-400 ml-2 my-auto" size={20} />
             <input type="text" placeholder="Cari produk di etalase Anda..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full px-3 py-2 text-gray-800 outline-none" />
           </div>
@@ -522,19 +525,19 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
           {/* WIDGETS UNTUK PENJUAL */}
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-4 flex items-center justify-between shadow-2xl max-w-2xl mx-auto">
             <button onClick={() => setShowQRScanner(true)} className="flex flex-col items-center group w-1/3 p-2 hover:bg-white/5 rounded-2xl transition">
-              <div className="bg-white text-green-900 p-3 rounded-2xl mb-2"><QrCode size={24}/></div>
+              <div className="bg-white text-[#6E4B2B] p-3 rounded-2xl mb-2"><QrCode size={24}/></div>
               <span className="text-xs font-bold text-white">Scan QRIS</span>
             </button>
             <div className="w-px h-16 bg-white/20"></div>
             <button className="flex flex-col items-center group w-1/3 p-2 hover:bg-white/5 rounded-2xl transition">
               <div className="bg-blue-500 text-white p-3 rounded-2xl mb-2"><Wallet size={24}/></div>
-              <span className="text-[10px] text-green-100 mb-0.5">Saldo EcoPay</span>
+              <span className="text-[10px] text-[#F5EBE1] mb-0.5">Saldo EcoPay</span>
               <span className="text-sm font-bold text-white">Rp{(ecoPayBalance).toLocaleString('id-ID')}</span>
             </button>
             <div className="w-px h-16 bg-white/20"></div>
             <button onClick={() => setShowCheckInModal(true)} className="flex flex-col items-center group w-1/3 p-2 hover:bg-white/5 rounded-2xl transition">
               <div className="bg-yellow-400 text-yellow-900 p-3 rounded-2xl mb-2"><CalendarCheck size={24}/></div>
-              <span className="text-[10px] text-green-100 mb-0.5">Total Koin</span>
+              <span className="text-[10px] text-[#F5EBE1] mb-0.5">Total Koin</span>
               <span className="text-sm font-bold text-white">{checkedInDays.includes(CURRENT_DAY) ? 'Selesai' : 'Cek-in'}</span>
             </button>
           </div>
@@ -545,13 +548,13 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-gray-800">Produk yang Dijual ({filtered.length})</h2>
-          <button onClick={() => setActiveTab('store')} className="bg-green-100 text-green-800 text-xs font-bold px-4 py-2 rounded-lg hover:bg-green-200 shadow-sm">+ Upload Baru</button>
+          <button onClick={() => setActiveTab('store')} className="bg-[#F5EBE1] text-[#855F3A] text-xs font-bold px-4 py-2 rounded-lg hover:bg-[#EAD9C8] shadow-sm">+ Upload Baru</button>
         </div>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
           {filtered.map(product => (
-            <div key={product.id} onClick={() => setSelectedProduct(product)} className="bg-white rounded-xl border border-gray-200 shadow-sm hover:border-green-400 hover:shadow-lg transition-all cursor-pointer group flex flex-col overflow-hidden relative">
-              <div className="absolute top-0 left-0 w-full h-1 bg-green-500 z-10"></div>
+            <div key={product.id} onClick={() => setSelectedProduct(product)} className="bg-white rounded-xl border border-gray-200 shadow-sm hover:border-[#C29666] hover:shadow-lg transition-all cursor-pointer group flex flex-col overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#D6AC82] z-10"></div>
               <div className="relative aspect-square">
                 <img src={product.img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -561,7 +564,7 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
               <div className="p-3 flex flex-col flex-grow">
                 <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 mb-2">{product.name}</h3>
                 <div className="mt-auto">
-                  <div className="text-green-600 font-black mb-1">Rp{product.price.toLocaleString('id-ID')}</div>
+                  <div className="text-[#C29666] font-black mb-1">Rp{product.price.toLocaleString('id-ID')}</div>
                   <div className="flex items-center text-[10px] text-gray-500"><Star size={10} className="text-yellow-400 fill-current mr-1"/>{product.rating} • {product.sold} Terjual</div>
                 </div>
               </div>
@@ -582,9 +585,9 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
         <div className="fixed inset-0 bg-black/60 z-[70] flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl w-full max-w-sm overflow-hidden relative">
             <button onClick={() => setShowCheckInModal(false)} className="absolute top-4 right-4 text-white hover:text-gray-200 bg-white/20 rounded-full p-1.5 z-10"><X size={20} /></button>
-            <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 pt-8 text-center text-white"><h2 className="text-2xl font-bold">Cek-in Harian Admin</h2><div className="bg-white/20 rounded-2xl py-2 px-5 inline-flex items-center mt-2 border border-white/30"><Coins className="mr-2 text-yellow-300" size={20} /><span className="font-bold text-xl">{coins}</span></div></div>
+            <div className="bg-gradient-to-br from-[#D6AC82] to-[#C29666] p-6 pt-8 text-center text-white"><h2 className="text-2xl font-bold">Cek-in Harian Admin</h2><div className="bg-white/20 rounded-2xl py-2 px-5 inline-flex items-center mt-2 border border-white/30"><Coins className="mr-2 text-yellow-300" size={20} /><span className="font-bold text-xl">{coins}</span></div></div>
             <div className="p-6">
-              <button onClick={handleCheckInToday} disabled={checkedInDays.includes(CURRENT_DAY)} className={`w-full py-3.5 rounded-xl font-bold text-white ${checkedInDays.includes(CURRENT_DAY) ? 'bg-gray-300 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'}`}>{checkedInDays.includes(CURRENT_DAY) ? 'Sudah Cek-in' : 'Cek-in Sekarang (+25 Koin)'}</button>
+              <button onClick={handleCheckInToday} disabled={checkedInDays.includes(CURRENT_DAY)} className={`w-full py-3.5 rounded-xl font-bold text-white ${checkedInDays.includes(CURRENT_DAY) ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#C29666] hover:bg-[#A67B4F]'}`}>{checkedInDays.includes(CURRENT_DAY) ? 'Sudah Cek-in' : 'Cek-in Sekarang (+25 Koin)'}</button>
             </div>
           </div>
         </div>
@@ -607,12 +610,12 @@ function CatalogTab({ products, role, addToCart, setActiveTab }) {
 
   return (
     <div className="max-w-7xl mx-auto animate-fade-in pb-24">
-      {/* Background hijau di menu pencarian Katalog Pembeli */}
-      <div className="bg-green-900 text-white px-4 py-10 relative">
+      {/* Background kayu di menu pencarian Katalog Pembeli */}
+      <div className="bg-[#6E4B2B] text-white px-4 py-10 relative">
         <img src={bgKu} className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto">
           <h1 className="text-2xl md:text-3xl font-extrabold mb-4">Semua Produk</h1>
-          <div className="flex bg-white rounded-xl overflow-hidden shadow-lg p-1.5 border-2 border-green-500/50">
+          <div className="flex bg-white rounded-xl overflow-hidden shadow-lg p-1.5 border-2 border-[#D6AC82]/50">
             <Search className="text-gray-400 ml-2 my-auto" size={20} />
             <input type="text" placeholder="Cari produk furnitur atau kriya kayu..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full px-3 py-2 text-gray-800 outline-none" />
           </div>
@@ -626,12 +629,12 @@ function CatalogTab({ products, role, addToCart, setActiveTab }) {
             <div key={product.id} onClick={() => setSelectedProduct(product)} className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all cursor-pointer group flex flex-col overflow-hidden">
               <div className="relative aspect-square">
                 <img src={product.img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                {product.isRecycled ? <span className="absolute top-2 left-2 bg-green-500/90 text-white text-[10px] font-bold px-2 py-1 rounded shadow flex items-center"><Recycle size={12} className="mr-1" /> Daur Ulang</span> : <span className="absolute top-2 left-2 bg-blue-500/90 text-white text-[10px] font-bold px-2 py-1 rounded shadow flex items-center"><Sparkles size={12} className="mr-1" /> Kayu Baru</span>}
+                {product.isRecycled ? <span className="absolute top-2 left-2 bg-[#D6AC82]/90 text-white text-[10px] font-bold px-2 py-1 rounded shadow flex items-center"><Recycle size={12} className="mr-1" /> Daur Ulang</span> : <span className="absolute top-2 left-2 bg-blue-500/90 text-white text-[10px] font-bold px-2 py-1 rounded shadow flex items-center"><Sparkles size={12} className="mr-1" /> Kayu Baru</span>}
               </div>
               <div className="p-3 flex flex-col flex-grow">
-                <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 mb-2 group-hover:text-green-600 transition-colors">{product.name}</h3>
+                <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 mb-2 group-hover:text-[#C29666] transition-colors">{product.name}</h3>
                 <div className="mt-auto">
-                  <div className="text-green-600 font-black mb-1">{formatRp(product.price)}</div>
+                  <div className="text-[#C29666] font-black mb-1">{formatRp(product.price)}</div>
                   <div className="flex items-center text-[10px] text-gray-500"><Star size={10} className="text-yellow-400 fill-current mr-1"/>{product.rating} • {product.sold} Terjual</div>
                 </div>
               </div>
@@ -670,13 +673,13 @@ function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProduc
       <div className="bg-gray-50 min-h-screen pb-20 animate-fade-in p-4 pt-6 text-center max-w-lg mx-auto">
         <button onClick={() => setShowBlockchain(false)} className="mb-6 flex items-center bg-white border px-4 py-2 rounded-lg text-sm shadow-sm"><ChevronLeft size={18} className="mr-1" /> Kembali</button>
         <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-          <ShieldCheck className="text-green-600 mx-auto mb-4" size={60} />
-          <h2 className="text-2xl font-bold text-green-800 mb-2">Transparansi Daur Ulang</h2>
+          <ShieldCheck className="text-[#C29666] mx-auto mb-4" size={60} />
+          <h2 className="text-2xl font-bold text-[#855F3A] mb-2">Transparansi Daur Ulang</h2>
           <p className="text-sm text-gray-500 mb-6">Jejak pengolahan produk: <strong className="text-gray-800">{product.name}</strong></p>
-          <div className="text-left space-y-6 relative border-l-2 border-green-200 ml-4 pl-6">
-            <div className="relative"><div className="absolute -left-[33px] top-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></div><h4 className="font-bold text-sm">Pengumpulan Limbah</h4><p className="text-[10px] font-mono text-gray-400">Tx: 0x8f2...b1</p></div>
-            <div className="relative"><div className="absolute -left-[33px] top-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></div><h4 className="font-bold text-sm">Proses Daur Ulang</h4><p className="text-[10px] font-mono text-gray-400">Tx: 0x1c9...a4</p></div>
-            <div className="relative"><div className="absolute -left-[33px] top-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></div><h4 className="font-bold text-sm text-green-700">Sertifikasi & Siap Jual</h4><p className="text-[10px] font-mono text-green-600">Smart Contract Terkunci</p></div>
+          <div className="text-left space-y-6 relative border-l-2 border-[#EAD9C8] ml-4 pl-6">
+            <div className="relative"><div className="absolute -left-[33px] top-0 bg-[#D6AC82] w-6 h-6 rounded-full border-4 border-white"></div><h4 className="font-bold text-sm">Pengumpulan Limbah</h4><p className="text-[10px] font-mono text-gray-400">Tx: 0x8f2...b1</p></div>
+            <div className="relative"><div className="absolute -left-[33px] top-0 bg-[#D6AC82] w-6 h-6 rounded-full border-4 border-white"></div><h4 className="font-bold text-sm">Proses Daur Ulang</h4><p className="text-[10px] font-mono text-gray-400">Tx: 0x1c9...a4</p></div>
+            <div className="relative"><div className="absolute -left-[33px] top-0 bg-[#D6AC82] w-6 h-6 rounded-full border-4 border-white"></div><h4 className="font-bold text-sm text-[#A67B4F]">Sertifikasi & Siap Jual</h4><p className="text-[10px] font-mono text-[#C29666]">Smart Contract Terkunci</p></div>
           </div>
         </div>
       </div>
@@ -691,8 +694,8 @@ function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProduc
         <div className="space-y-4 pt-4 px-4 md:px-0">
           <div className="bg-white p-5 md:rounded-2xl shadow-sm border border-gray-100">
             <h1 className="text-xl md:text-2xl font-bold text-gray-800 leading-snug mb-2">{product.name}</h1>
-            <div className="text-3xl font-black text-green-600 mb-4">{formatRp(product.price)}</div>
-            <div className="flex items-center text-sm text-gray-500"><div className="flex items-center text-green-600 mr-4"><Star size={16} className="fill-current mr-1" /><span className="font-bold">{product.rating}</span></div><span>{product.sold} Terjual</span></div>
+            <div className="text-3xl font-black text-[#C29666] mb-4">{formatRp(product.price)}</div>
+            <div className="flex items-center text-sm text-gray-500"><div className="flex items-center text-[#C29666] mr-4"><Star size={16} className="fill-current mr-1" /><span className="font-bold">{product.rating}</span></div><span>{product.sold} Terjual</span></div>
           </div>
 
           <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
@@ -703,10 +706,10 @@ function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProduc
           {/* VERIFIKASI (TAMPIL UNTUK PEMBELI SAJA) */}
           {role === 'buyer' && (
             product.isRecycled ? (
-              <div className="bg-green-50 border border-green-200 rounded-2xl p-5 shadow-sm">
-                <h4 className="font-extrabold text-green-800 text-base mb-1 flex items-center"><ShieldCheck className="mr-2" size={20}/> Terverifikasi Ramah Lingkungan</h4>
-                <p className="text-xs text-green-700 mb-4">Produk ini diproses dari limbah kayu daur ulang yang tercatat permanen di jaringan Blockchain.</p>
-                <button onClick={() => setShowBlockchain(true)} className="text-sm font-bold bg-white text-green-700 border-2 border-green-400 px-4 py-2 rounded-xl w-full shadow-sm flex items-center justify-center"><LinkIcon size={16} className="mr-2"/> Lihat Alur Blockchain</button>
+              <div className="bg-[#FCF9F5] border border-[#EAD9C8] rounded-2xl p-5 shadow-sm">
+                <h4 className="font-extrabold text-[#855F3A] text-base mb-1 flex items-center"><ShieldCheck className="mr-2" size={20}/> Terverifikasi Ramah Lingkungan</h4>
+                <p className="text-xs text-[#A67B4F] mb-4">Produk ini diproses dari limbah kayu daur ulang yang tercatat permanen di jaringan Blockchain.</p>
+                <button onClick={() => setShowBlockchain(true)} className="text-sm font-bold bg-white text-[#A67B4F] border-2 border-[#C29666] px-4 py-2 rounded-xl w-full shadow-sm flex items-center justify-center"><LinkIcon size={16} className="mr-2"/> Lihat Alur Blockchain</button>
               </div>
             ) : (
               <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 shadow-sm">
@@ -739,8 +742,8 @@ function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProduc
       <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex items-center p-3 z-50 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] max-w-4xl md:left-1/2 md:-translate-x-1/2 md:rounded-t-2xl">
         {role === 'buyer' ? (
           <>
-            <div className="flex w-1/3"><button onClick={onAddToCart} className="w-full flex flex-col items-center text-green-600"><ShoppingCart size={22} /><span className="text-[10px] mt-1 font-medium">Keranjang</span></button></div>
-            <div className="w-2/3 pl-2"><button onClick={onBuyNow} className="w-full bg-green-600 text-white font-bold rounded-xl py-3 shadow-lg hover:bg-green-700 transition">Beli Sekarang</button></div>
+            <div className="flex w-1/3"><button onClick={onAddToCart} className="w-full flex flex-col items-center text-[#C29666]"><ShoppingCart size={22} /><span className="text-[10px] mt-1 font-medium">Keranjang</span></button></div>
+            <div className="w-2/3 pl-2"><button onClick={onBuyNow} className="w-full bg-[#C29666] text-white font-bold rounded-xl py-3 shadow-lg hover:bg-[#A67B4F] transition">Beli Sekarang</button></div>
           </>
         ) : (
           <div className="w-full flex gap-3 px-2">
@@ -771,15 +774,15 @@ function UploadProductTab({ products, setProducts, showNotification, shopInfo })
   return (
     <div className="max-w-xl mx-auto px-4 py-8 animate-fade-in pb-24">
       <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-extrabold text-gray-800 mb-6 flex items-center"><UploadCloud className="mr-3 text-green-600" /> Upload Produk Baru</h2>
+        <h2 className="text-2xl font-extrabold text-gray-800 mb-6 flex items-center"><UploadCloud className="mr-3 text-[#C29666]" /> Upload Produk Baru</h2>
         <form onSubmit={handleUploadProduct} className="space-y-4">
-          <input required type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Nama Produk" className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-gray-50 font-medium outline-none focus:border-green-500" />
-          <input required type="number" value={price} onChange={e=>setPrice(e.target.value)} placeholder="Harga (Rp)" className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-gray-50 font-medium outline-none focus:border-green-500" />
-          <textarea required rows="4" value={desc} onChange={e=>setDesc(e.target.value)} placeholder="Deskripsi produk..." className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-gray-50 outline-none focus:border-green-500"></textarea>
-          <div className="bg-green-50 p-4 rounded-xl border border-green-200">
-            <label className="flex items-center space-x-3 cursor-pointer"><input type="checkbox" checked={isRecycled} onChange={(e) => setIsRecycled(e.target.checked)} className="w-5 h-5 accent-green-600" /><span className="text-sm font-bold text-green-900">Sertifikasi Daur Ulang (Blockchain)</span></label>
+          <input required type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Nama Produk" className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-gray-50 font-medium outline-none focus:border-[#D6AC82]" />
+          <input required type="number" value={price} onChange={e=>setPrice(e.target.value)} placeholder="Harga (Rp)" className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-gray-50 font-medium outline-none focus:border-[#D6AC82]" />
+          <textarea required rows="4" value={desc} onChange={e=>setDesc(e.target.value)} placeholder="Deskripsi produk..." className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-gray-50 outline-none focus:border-[#D6AC82]"></textarea>
+          <div className="bg-[#FCF9F5] p-4 rounded-xl border border-[#EAD9C8]">
+            <label className="flex items-center space-x-3 cursor-pointer"><input type="checkbox" checked={isRecycled} onChange={(e) => setIsRecycled(e.target.checked)} className="w-5 h-5 accent-[#C29666]" /><span className="text-sm font-bold text-[#6E4B2B]">Sertifikasi Daur Ulang (Blockchain)</span></label>
           </div>
-          <button type="submit" className="w-full bg-green-600 text-white font-extrabold py-4 rounded-xl shadow-lg mt-4">Simpan ke Etalase</button>
+          <button type="submit" className="w-full bg-[#C29666] text-white font-extrabold py-4 rounded-xl shadow-lg mt-4">Simpan ke Etalase</button>
         </form>
       </div>
     </div>
@@ -800,8 +803,8 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
 
   const MOCK_ORDERS = [
     { id: 'TRX-1092', name: 'Meja Kopi Estetik (Limbah Palet)', status: 'dikemas', price: 250000, img: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=200&q=80' },
-    { id: 'TRX-1093', name: 'Jam Tangan Kayu Eboni', status: 'dikirim', price: 350000, img: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=200&q=80' },
-    { id: 'TRX-1094', name: 'Nampan Saji Kayu Pinus', status: 'penilaian', price: 65000, img: 'https://images.unsplash.com/photo-1610705180800-4b36070bb8fb?auto=format&fit=crop&w=200&q=80' }
+    { id: 'TRX-1093', name: 'Jam Tangan Kayu Eboni', status: 'dikirim', price: 350000, img: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=200&q=80' },
+    { id: 'TRX-1094', name: 'Nampan Saji Kayu Pinus', status: 'penilaian', price: 65000, img: 'https://images.unsplash.com/photo-1585501861053-cb20668f44de?auto=format&fit=crop&w=200&q=80' }
   ];
 
   const handleSaveShopInfo = (e) => {
@@ -825,18 +828,18 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
         <SubHeader title="Profil & Info Toko" />
         <div className="bg-white p-4 space-y-4 max-w-xl mx-auto mt-2">
           <form onSubmit={handleSaveShopInfo} className="space-y-4">
-            <div><label className="text-sm font-bold text-gray-700">Username Toko</label><input type="text" value={formData.username} onChange={e=>setFormData({...formData, username: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-green-500" /></div>
-            <div><label className="text-sm font-bold text-gray-700">Email</label><input type="email" value={formData.email} onChange={e=>setFormData({...formData, email: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-green-500" /></div>
-            <div><label className="text-sm font-bold text-gray-700">Password Baru</label><input type="password" placeholder="Biarkan kosong jika tidak diubah" className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-green-500" /></div>
-            <div><label className="text-sm font-bold text-gray-700">Nomor HP / WhatsApp</label><input type="text" value={formData.phone} onChange={e=>setFormData({...formData, phone: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-green-500" /></div>
+            <div><label className="text-sm font-bold text-gray-700">Username Toko</label><input type="text" value={formData.username} onChange={e=>setFormData({...formData, username: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-[#D6AC82]" /></div>
+            <div><label className="text-sm font-bold text-gray-700">Email</label><input type="email" value={formData.email} onChange={e=>setFormData({...formData, email: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-[#D6AC82]" /></div>
+            <div><label className="text-sm font-bold text-gray-700">Password Baru</label><input type="password" placeholder="Biarkan kosong jika tidak diubah" className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-[#D6AC82]" /></div>
+            <div><label className="text-sm font-bold text-gray-700">Nomor HP / WhatsApp</label><input type="text" value={formData.phone} onChange={e=>setFormData({...formData, phone: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-gray-50 outline-none focus:border-[#D6AC82]" /></div>
             <div className="border-t border-gray-100 pt-4 mt-2">
-              <label className="text-sm font-bold text-gray-700 text-green-700">Deskripsi Toko (Tampil di Publik)</label>
-              <textarea rows="4" value={formData.description} onChange={e=>setFormData({...formData, description: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-green-50 outline-none focus:border-green-500"></textarea>
+              <label className="text-sm font-bold text-gray-700 text-[#A67B4F]">Deskripsi Toko (Tampil di Publik)</label>
+              <textarea rows="4" value={formData.description} onChange={e=>setFormData({...formData, description: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-[#FCF9F5] outline-none focus:border-[#D6AC82]"></textarea>
             </div>
-            <div><label className="text-sm font-bold text-gray-700 text-green-700">Visi Toko</label><textarea rows="2" value={formData.visi} onChange={e=>setFormData({...formData, visi: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-green-50 outline-none focus:border-green-500"></textarea></div>
-            <div><label className="text-sm font-bold text-gray-700 text-green-700">Misi Toko</label><textarea rows="3" value={formData.misi} onChange={e=>setFormData({...formData, misi: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-green-50 outline-none focus:border-green-500"></textarea></div>
+            <div><label className="text-sm font-bold text-gray-700 text-[#A67B4F]">Visi Toko</label><textarea rows="2" value={formData.visi} onChange={e=>setFormData({...formData, visi: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-[#FCF9F5] outline-none focus:border-[#D6AC82]"></textarea></div>
+            <div><label className="text-sm font-bold text-gray-700 text-[#A67B4F]">Misi Toko</label><textarea rows="3" value={formData.misi} onChange={e=>setFormData({...formData, misi: e.target.value})} className="w-full border rounded-xl px-4 py-3 mt-1 bg-[#FCF9F5] outline-none focus:border-[#D6AC82]"></textarea></div>
             
-            <button type="submit" className="w-full bg-green-600 text-white font-extrabold py-4 rounded-xl shadow-lg mt-4">Simpan Profil & Deskripsi</button>
+            <button type="submit" className="w-full bg-[#C29666] text-white font-extrabold py-4 rounded-xl shadow-lg mt-4">Simpan Profil & Deskripsi</button>
           </form>
         </div>
       </div>
@@ -851,8 +854,8 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
           <div><label className="text-sm text-gray-600 block mb-1">Username</label><input type="text" value="pembeli_eco" className="w-full border rounded-lg p-3 outline-none" readOnly/></div>
           <div><label className="text-sm text-gray-600 block mb-1">Email</label><input type="text" value="pembeli@contoh.com" className="w-full border rounded-lg p-3 outline-none" /></div>
           <div><label className="text-sm text-gray-600 block mb-1">Ganti Password</label><input type="password" placeholder="••••••••" className="w-full border rounded-lg p-3 outline-none" /></div>
-          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-200"><span className="flex items-center text-sm font-medium"><Fingerprint size={18} className="mr-2 text-gray-500"/> Verifikasi Sidik Jari</span><div className="relative cursor-pointer" onClick={() => setUseFingerprint(!useFingerprint)}><div className={`block w-10 h-6 rounded-full transition ${useFingerprint ? 'bg-green-600' : 'bg-gray-300'}`}></div><div className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform ${useFingerprint ? 'translate-x-4' : ''}`}></div></div></div>
-          <button onClick={()=>{showNotification("Tersimpan!"); setCurrentView('settings');}} className="w-full bg-green-600 text-white font-bold py-3 rounded-lg">Simpan Perubahan</button>
+          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-200"><span className="flex items-center text-sm font-medium"><Fingerprint size={18} className="mr-2 text-gray-500"/> Verifikasi Sidik Jari</span><div className="relative cursor-pointer" onClick={() => setUseFingerprint(!useFingerprint)}><div className={`block w-10 h-6 rounded-full transition ${useFingerprint ? 'bg-[#C29666]' : 'bg-gray-300'}`}></div><div className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform ${useFingerprint ? 'translate-x-4' : ''}`}></div></div></div>
+          <button onClick={()=>{showNotification("Tersimpan!"); setCurrentView('settings');}} className="w-full bg-[#C29666] text-white font-bold py-3 rounded-lg">Simpan Perubahan</button>
         </div>
       </div>
     );
@@ -881,7 +884,7 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
     return (
       <div className="bg-gray-50 min-h-screen pb-10 animate-fade-in"><SubHeader title="Pusat Bantuan & FAQ" />
         <div className="bg-white mt-2 p-6 flex flex-col items-center text-center max-w-xl mx-auto">
-          <HelpCircle size={64} className="text-green-500 mb-4" />
+          <HelpCircle size={64} className="text-[#D6AC82] mb-4" />
           <h3 className="text-xl font-bold text-gray-800 mb-2">Halo, ada yang bisa kami bantu?</h3>
           <p className="text-gray-500 text-sm mb-6">Tim dukungan pelanggan EcoCraft.id siap membantu keluhan Anda.</p>
           <div className="w-full text-left mb-8 border-t border-gray-100 pt-4">
@@ -890,7 +893,7 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
              <details className="mb-3 bg-gray-50 p-3 rounded-lg"><summary className="font-semibold text-sm cursor-pointer text-gray-700 outline-none">Berapa lama proses verifikasi daur ulang?</summary><p className="text-xs text-gray-500 mt-2">Maksimal 2x24 jam sejak limbah disetorkan ke depo kami melalui mitra penjual.</p></details>
              <details className="mb-3 bg-gray-50 p-3 rounded-lg"><summary className="font-semibold text-sm cursor-pointer text-gray-700 outline-none">Cara melacak pesanan?</summary><p className="text-xs text-gray-500 mt-2">Anda dapat melacak pesanan di menu Profil &gt; Dikirim &gt; Lacak.</p></details>
           </div>
-          <button className="w-full flex items-center justify-center bg-green-50 text-green-700 p-4 rounded-xl font-bold mb-3 hover:bg-green-100 transition"><MessageSquare size={20} className="mr-3" /> Live Chat CS (24/7)</button>
+          <button className="w-full flex items-center justify-center bg-[#FCF9F5] text-[#A67B4F] p-4 rounded-xl font-bold mb-3 hover:bg-[#F5EBE1] transition"><MessageSquare size={20} className="mr-3" /> Live Chat CS (24/7)</button>
           <button className="w-full flex items-center justify-center bg-gray-100 text-gray-700 p-4 rounded-xl font-bold hover:bg-gray-200 transition"><Mail size={20} className="mr-3 text-red-500" /> Email admin@ecocraft.id</button>
         </div>
       </div>
@@ -903,16 +906,21 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
       <div className="bg-gray-100 min-h-screen pb-10 animate-fade-in"><SubHeader title="Pengaturan Akun" />
         <div className="mt-2 bg-white max-w-xl mx-auto shadow-sm">
           {role === 'seller' ? (
-            <div onClick={() => setCurrentView('shop_profile')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><Store size={20} className="text-green-600 mr-3" /> <span className="text-sm font-medium">Profil & Info Toko</span></div><ChevronRight size={16} className="text-gray-400" /></div>
+            <div onClick={() => setCurrentView('shop_profile')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><Store size={20} className="text-[#C29666] mr-3" /> <span className="text-sm font-medium">Profil & Info Toko</span></div><ChevronRight size={16} className="text-gray-400" /></div>
           ) : (
-            <div onClick={() => setCurrentView('security')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><Shield size={20} className="text-green-600 mr-3" /> <span className="text-sm font-medium">Keamanan Akun</span></div><ChevronRight size={16} className="text-gray-400" /></div>
+            <div onClick={() => setCurrentView('security')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><Shield size={20} className="text-[#C29666] mr-3" /> <span className="text-sm font-medium">Keamanan Akun</span></div><ChevronRight size={16} className="text-gray-400" /></div>
           )}
           <div onClick={() => setCurrentView('address')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><MapPin size={20} className="text-blue-500 mr-3" /> <span className="text-sm font-medium">Alamat Saya</span></div><ChevronRight size={16} className="text-gray-400" /></div>
-          <div onClick={() => setCurrentView('bank')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><CreditCard size={20} className="text-green-600 mr-3" /> <span className="text-sm font-medium">Rekening Bank</span></div><ChevronRight size={16} className="text-gray-400" /></div>
+          <div onClick={() => setCurrentView('bank')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><CreditCard size={20} className="text-[#C29666] mr-3" /> <span className="text-sm font-medium">Rekening Bank</span></div><ChevronRight size={16} className="text-gray-400" /></div>
         </div>
         <div className="mt-2 bg-white max-w-xl mx-auto shadow-sm">
           <div onClick={() => setCurrentView('language')} className="flex justify-between items-center p-4 border-b cursor-pointer hover:bg-gray-50"><div className="flex items-center"><Globe size={20} className="text-teal-500 mr-3" /> <span className="text-sm font-medium">Bahasa</span></div><div className="flex items-center text-gray-400 text-xs"><span className="mr-2">{language}</span> <ChevronRight size={16} /></div></div>
           <div onClick={() => setCurrentView('help')} className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"><div className="flex items-center"><HelpCircle size={20} className="text-purple-500 mr-3" /> <span className="text-sm font-medium">Pusat Bantuan & FAQ</span></div><ChevronRight size={16} className="text-gray-400" /></div>
+        </div>
+        
+        {/* Tombol Logout di Dalam Settings */}
+        <div className="max-w-xl mx-auto p-4 mt-4">
+          <button onClick={() => { setAuth(null); showNotification("Berhasil Keluar Akun"); }} className="w-full bg-white text-red-600 font-bold py-3.5 rounded-xl border border-red-200 hover:bg-red-50 transition shadow-sm">Keluar (Logout)</button>
         </div>
       </div>
     );
@@ -921,7 +929,7 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
   // VIEW: PROFIL OVERVIEW
   return (
     <div className="bg-gray-100 min-h-screen pb-20 animate-fade-in relative">
-      <div className="bg-gradient-to-r from-green-800 to-green-700 pt-10 pb-6 px-4 text-white shadow-md flex items-center justify-between">
+      <div className="bg-gradient-to-r from-[#855F3A] to-[#A67B4F] pt-10 pb-6 px-4 text-white shadow-md flex items-center justify-between">
         <div className="flex items-center max-w-4xl mx-auto w-full relative">
           <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center border-2 border-white/50 mr-4"><User size={32} /></div>
           <div>
@@ -938,16 +946,16 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
         <div className="flex justify-around text-xs text-gray-600 font-medium">
           {role === 'buyer' ? (
             <>
-              <div onClick={() => setActiveModal('belum_bayar')} className="flex flex-col items-center cursor-pointer hover:text-green-600"><div className="mb-2 bg-gray-50 p-3 rounded-full"><CreditCard size={24} /></div><span>Belum Bayar</span></div>
-              <div onClick={() => setActiveModal('dikemas')} className="flex flex-col items-center cursor-pointer hover:text-green-600 relative"><div className="mb-2 bg-gray-50 p-3 rounded-full"><Package size={24} /></div><span className="absolute -top-1 right-2 bg-red-500 text-white text-[9px] w-4 h-4 flex justify-center items-center rounded-full">1</span><span>Dikemas</span></div>
-              <div onClick={() => setActiveModal('dikirim')} className="flex flex-col items-center cursor-pointer hover:text-green-600 relative"><div className="mb-2 bg-gray-50 p-3 rounded-full"><Truck size={24} /></div><span className="absolute -top-1 right-2 bg-red-500 text-white text-[9px] w-4 h-4 flex justify-center items-center rounded-full">1</span><span>Dikirim</span></div>
-              <div onClick={() => setActiveModal('penilaian')} className="flex flex-col items-center cursor-pointer hover:text-green-600 relative"><div className="mb-2 bg-gray-50 p-3 rounded-full"><Star size={24} /></div><span className="absolute -top-1 right-2 bg-red-500 text-white text-[9px] w-4 h-4 flex justify-center items-center rounded-full">1</span><span>Penilaian</span></div>
+              <div onClick={() => setActiveModal('belum_bayar')} className="flex flex-col items-center cursor-pointer hover:text-[#C29666]"><div className="mb-2 bg-gray-50 p-3 rounded-full"><CreditCard size={24} /></div><span>Belum Bayar</span></div>
+              <div onClick={() => setActiveModal('dikemas')} className="flex flex-col items-center cursor-pointer hover:text-[#C29666] relative"><div className="mb-2 bg-gray-50 p-3 rounded-full"><Package size={24} /></div><span className="absolute -top-1 right-2 bg-red-500 text-white text-[9px] w-4 h-4 flex justify-center items-center rounded-full">1</span><span>Dikemas</span></div>
+              <div onClick={() => setActiveModal('dikirim')} className="flex flex-col items-center cursor-pointer hover:text-[#C29666] relative"><div className="mb-2 bg-gray-50 p-3 rounded-full"><Truck size={24} /></div><span className="absolute -top-1 right-2 bg-red-500 text-white text-[9px] w-4 h-4 flex justify-center items-center rounded-full">1</span><span>Dikirim</span></div>
+              <div onClick={() => setActiveModal('penilaian')} className="flex flex-col items-center cursor-pointer hover:text-[#C29666] relative"><div className="mb-2 bg-gray-50 p-3 rounded-full"><Star size={24} /></div><span className="absolute -top-1 right-2 bg-red-500 text-white text-[9px] w-4 h-4 flex justify-center items-center rounded-full">1</span><span>Penilaian</span></div>
             </>
           ) : (
             <>
               <div className="flex flex-col items-center"><div className="mb-2 bg-orange-50 p-3 rounded-full text-orange-600 relative"><span className="absolute top-0 right-0 bg-red-500 w-3 h-3 rounded-full border-2 border-white"></span><Package size={24} /></div><span>Perlu Dikemas</span></div>
               <div className="flex flex-col items-center"><div className="mb-2 bg-blue-50 p-3 rounded-full text-blue-600"><Truck size={24} /></div><span>Dalam Pengiriman</span></div>
-              <div className="flex flex-col items-center"><div className="mb-2 bg-green-50 p-3 rounded-full text-green-600"><CheckCircle size={24} /></div><span>Selesai</span></div>
+              <div className="flex flex-col items-center"><div className="mb-2 bg-[#FCF9F5] p-3 rounded-full text-[#C29666]"><CheckCircle size={24} /></div><span>Selesai</span></div>
             </>
           )}
         </div>
@@ -956,14 +964,20 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
       <div className="max-w-4xl mx-auto mt-2 bg-white">
         <div className="px-4 py-3 flex justify-between items-center border-b border-gray-100"><h3 className="font-bold text-gray-800">Dompet Saya</h3></div>
         <div className="flex justify-around py-4 text-xs text-gray-600">
-          <div className="flex flex-col items-center w-1/3"><Wallet size={26} className="mb-2 text-blue-600" /><span className="font-semibold mb-0.5">EcoPay</span><span className="text-green-600">{formatRp(ecoPayBalance)}</span></div>
+          <div className="flex flex-col items-center w-1/4"><Wallet size={26} className="mb-2 text-blue-600" /><span className="font-semibold mb-0.5">EcoPay</span><span className="text-[#C29666]">{formatRp(ecoPayBalance)}</span></div>
           {role === 'buyer' && (
-            <div className="flex flex-col items-center w-1/3 border-l border-r border-gray-100"><Coins size={26} className="mb-2 text-yellow-500" /><span className="font-semibold mb-0.5">Koin Eco</span><span className="text-yellow-600 font-bold">{coins} Koin</span></div>
+            <div className="flex flex-col items-center w-1/4 border-l border-r border-gray-100"><Coins size={26} className="mb-2 text-yellow-500" /><span className="font-semibold mb-0.5">Koin Eco</span><span className="text-yellow-600 font-bold">{coins} Koin</span></div>
           )}
-          <div className="flex flex-col items-center w-1/3"><Ticket size={26} className="mb-2 text-green-600" /><span className="font-semibold mb-0.5">Voucher</span><span className="text-gray-500">Aktif</span></div>
+          <div className="flex flex-col items-center w-1/4"><Ticket size={26} className="mb-2 text-[#C29666]" /><span className="font-semibold mb-0.5">Voucher</span><span className="text-gray-500">Aktif</span></div>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto p-4 mt-4"><button onClick={() => { setAuth(null); showNotification("Berhasil Keluar Akun"); }} className="w-full bg-white text-red-600 font-bold py-3.5 rounded-xl border border-red-200 hover:bg-red-50 transition">Keluar (Logout)</button></div>
+
+      {/* Tombol Logout Tambahan di Halaman Utama Profil */}
+      <div className="max-w-4xl mx-auto p-4 mt-4">
+        <button onClick={() => { setAuth(null); showNotification("Berhasil Keluar Akun"); }} className="w-full bg-white text-red-600 font-bold py-3.5 rounded-xl border border-red-200 hover:bg-red-50 transition shadow-sm">
+          Keluar (Logout)
+        </button>
+      </div>
 
       {/* POP UP MODAL PESANAN PEMBELI */}
       {activeModal && role === 'buyer' && (
@@ -988,9 +1002,9 @@ function ShopeeStyleProfileTab({ role, setAuth, showNotification, coins, ecoPayB
                       <div className="flex-1">
                         <h4 className="text-sm font-bold text-gray-800 line-clamp-1 pr-10">{order.name}</h4>
                         <p className="text-xs text-gray-500 font-mono mb-1">{order.id}</p>
-                        <p className="text-green-600 font-bold text-sm">{formatRp(order.price)}</p>
+                        <p className="text-[#C29666] font-bold text-sm">{formatRp(order.price)}</p>
                       </div>
-                      {activeModal === 'dikirim' && <button className="absolute bottom-3 right-3 text-[10px] bg-green-600 text-white font-bold px-3 py-1.5 rounded-lg shadow-sm">Lacak</button>}
+                      {activeModal === 'dikirim' && <button className="absolute bottom-3 right-3 text-[10px] bg-[#C29666] text-white font-bold px-3 py-1.5 rounded-lg shadow-sm">Lacak</button>}
                       {activeModal === 'penilaian' && <button className="absolute bottom-3 right-3 text-[10px] bg-orange-500 text-white font-bold px-3 py-1.5 rounded-lg shadow-sm">Nilai</button>}
                     </div>
                   ))}
@@ -1012,12 +1026,34 @@ function CartTab({ cart, setCart, showNotification, setActiveTab, ecoPayBalance,
   };
   if (cart.length === 0) return (<div className="flex flex-col items-center justify-center py-32"><ShoppingCart size={80} className="text-gray-200 mb-6" /><h2 className="text-2xl font-bold text-gray-400">Keranjang Kosong</h2></div>);
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 pb-32 animate-fade-in"><h1 className="text-2xl font-bold text-gray-800 mb-6 flex items-center"><ShoppingCart className="mr-3 text-green-600" /> Keranjang Belanja</h1><div className="space-y-4 mb-8">{cart.map(item => (<div key={item.id} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4"><img src={item.img} className="w-20 h-20 object-cover rounded-xl border border-gray-50" /><div className="flex-grow"><h3 className="text-sm font-bold text-gray-800 line-clamp-1">{item.name}</h3><p className="text-green-600 font-bold mt-1">{formatRp(item.price)}</p><p className="text-xs text-gray-500 mt-1 font-medium bg-gray-100 inline-block px-2 py-0.5 rounded">Jumlah: {item.qty}</p></div><button onClick={() => setCart(cart.filter(c => c.id !== item.id))} className="w-10 h-10 bg-red-50 text-red-500 rounded-full flex items-center justify-center"><Trash2 size={18}/></button></div>))}</div><div className="fixed bottom-[65px] md:bottom-0 left-0 w-full bg-white p-4 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] border-t border-gray-200 z-30"><div className="max-w-4xl mx-auto flex justify-between items-center"><span className="text-gray-600 font-medium">Total:</span><span className="text-2xl font-black text-green-600">{formatRp(total)}</span></div><button onClick={handleCheckout} className="w-full max-w-4xl mx-auto mt-3 bg-gray-900 text-white font-bold py-4 rounded-xl">Bayar via EcoPay</button></div></div>
+    <div className="max-w-4xl mx-auto px-4 py-8 pb-32 animate-fade-in"><h1 className="text-2xl font-bold text-gray-800 mb-6 flex items-center"><ShoppingCart className="mr-3 text-[#C29666]" /> Keranjang Belanja</h1><div className="space-y-4 mb-8">{cart.map(item => (<div key={item.id} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4"><img src={item.img} className="w-20 h-20 object-cover rounded-xl border border-gray-50" /><div className="flex-grow"><h3 className="text-sm font-bold text-gray-800 line-clamp-1">{item.name}</h3><p className="text-[#C29666] font-bold mt-1">{formatRp(item.price)}</p><p className="text-xs text-gray-500 mt-1 font-medium bg-gray-100 inline-block px-2 py-0.5 rounded">Jumlah: {item.qty}</p></div><button onClick={() => setCart(cart.filter(c => c.id !== item.id))} className="w-10 h-10 bg-red-50 text-red-500 rounded-full flex items-center justify-center"><Trash2 size={18}/></button></div>))}</div><div className="fixed bottom-[65px] md:bottom-0 left-0 w-full bg-white p-4 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] border-t border-gray-200 z-30"><div className="max-w-4xl mx-auto flex justify-between items-center"><span className="text-gray-600 font-medium">Total:</span><span className="text-2xl font-black text-[#C29666]">{formatRp(total)}</span></div><button onClick={handleCheckout} className="w-full max-w-4xl mx-auto mt-3 bg-gray-900 text-white font-bold py-4 rounded-xl">Bayar via EcoPay</button></div></div>
   );
 }
 
 function NewsTab() {
-  return (<div className="max-w-4xl mx-auto px-4 py-8 animate-fade-in pb-20"><h1 className="text-3xl font-bold text-gray-800 mb-6 flex items-center"><Newspaper className="mr-3 text-green-600" /> Berita UMKM Terkini</h1><div className="space-y-4">{BERITA_UMKM.map(berita => (<div key={berita.id} className="bg-white p-5 rounded-2xl shadow-sm border border-gray-200"><h3 className="text-lg font-bold text-gray-900 mb-2">{berita.title}</h3><div className="flex items-center text-xs text-gray-500 mb-3"><span className="bg-green-100 text-green-800 px-2.5 py-1 rounded font-bold">{berita.source}</span><span className="mx-2">•</span><span className="font-medium">{berita.date}</span></div><p className="text-sm text-gray-600">{berita.excerpt}</p></div>))}</div></div>);
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-8 animate-fade-in pb-20">
+      <h1 className="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+        <Newspaper className="mr-3 text-[#C29666]" /> Berita UMKM Terkini
+      </h1>
+      <div className="space-y-4">
+        {BERITA_UMKM.map(berita => (
+          <a key={berita.id} href={berita.link} target="_blank" rel="noopener noreferrer" className="block bg-white p-5 rounded-2xl shadow-sm border border-gray-200 hover:border-[#C29666] hover:shadow-md transition-all group cursor-pointer">
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#C29666] transition-colors pr-4">{berita.title}</h3>
+              <ExternalLink size={20} className="text-gray-400 group-hover:text-[#C29666] flex-shrink-0 mt-0.5" />
+            </div>
+            <div className="flex items-center text-xs text-gray-500 mb-3">
+              <span className="bg-[#FCF9F5] text-[#855F3A] px-2.5 py-1 rounded font-bold">{berita.source}</span>
+              <span className="mx-2">•</span>
+              <span className="font-medium">{berita.date}</span>
+            </div>
+            <p className="text-sm text-gray-600">{berita.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function AITab() {
@@ -1046,7 +1082,7 @@ function AITab() {
         <div className="flex-grow p-4 md:p-6 overflow-y-auto bg-gray-50 space-y-4">
           {chat.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-4 rounded-2xl ${msg.sender === 'user' ? 'bg-green-600 text-white rounded-br-none' : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'}`}>
+              <div className={`max-w-[85%] p-4 rounded-2xl ${msg.sender === 'user' ? 'bg-[#C29666] text-white rounded-br-none' : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'}`}>
                 {msg.sender === 'ai' && <div className="font-bold text-xs text-purple-600 mb-2 flex items-center"><Cpu size={14} className="mr-1"/> AI</div>}
                 {msg.image && <img src={msg.image} className="w-full max-h-48 object-cover rounded-xl mb-2" />}
                 {msg.text && <p className="text-sm leading-relaxed">{msg.text}</p>}
@@ -1068,11 +1104,10 @@ function AITab() {
   );
 }
 
-// ================= LAYAR LOGIN (DESAIN KEMBALI KE ASLI SEPERTI SCREENSHOT AWAL) =================
+// ================= LAYAR LOGIN =================
 function AuthScreen({ setUserRole }) {
   const [roleMode, setRoleMode] = useState('buyer');
 
-  // GANTI INI JADI IMPORT LOKAL DI VS CODE: const LOGO_LOGIN_URL = logoKu;
   const LOGO_LOGIN_URL = logoKu; 
 
   const handleSubmit = (e) => {
@@ -1081,18 +1116,18 @@ function AuthScreen({ setUserRole }) {
   };
 
   return (
-    <div className="min-h-screen bg-green-50 flex items-center justify-center p-4 font-sans animate-fade-in relative">
+    <div className="min-h-screen bg-[#FCF9F5] flex items-center justify-center p-4 font-sans animate-fade-in relative">
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex w-full max-w-4xl relative z-10 min-h-[500px]">
         
-        {/* SISI KIRI: HIJAU POLOS + LOGO (Sama persis seperti Screenshot) */}
-        <div className="hidden md:flex w-1/2 bg-[#064e3b] flex-col items-center justify-center text-center p-12 text-white relative">
+        {/* SISI KIRI: Latar Cokelat Kayu + LOGO */}
+        <div className="hidden md:flex w-1/2 bg-[#6E4B2B] flex-col items-center justify-center text-center p-12 text-white relative">
           <img src={bgKu} className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
           <div className="relative z-10 flex flex-col items-center">
             <div className="w-24 h-24 mb-6 rounded-full overflow-hidden border-4 border-white bg-white p-2 shadow-lg">
               <img src={LOGO_LOGIN_URL} alt="Logo" className="w-full h-full object-contain rounded-full" />
             </div>
-            <h2 className="text-3xl font-extrabold mb-4 tracking-tight">EcoCraft<span className="text-green-400">.id</span></h2>
-            <p className="text-sm text-green-50 font-medium max-w-xs leading-relaxed">
+            <h2 className="text-3xl font-extrabold mb-4 tracking-tight">EcoCraft<span className="text-[#C29666]">.id</span></h2>
+            <p className="text-sm text-[#FCF9F5] font-medium max-w-xs leading-relaxed">
               Solusi Belanja Kebutuhan Anda! Bersama EcoCraft.id Membantu UMKM Lebih Maju.
             </p>
           </div>
@@ -1101,14 +1136,13 @@ function AuthScreen({ setUserRole }) {
         {/* SISI KANAN: FORM PUTIH */}
         <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white relative">
           
-          {/* TAB PEMILIHAN ROLE (Dibuat sangat kecil dan elegan di pojok kanan atas agar tidak merusak desain form utama) */}
           <div className="absolute top-6 right-6 md:right-8 bg-gray-100 rounded-full p-1 flex shadow-inner">
-            <button type="button" onClick={() => setRoleMode('buyer')} className={`px-4 py-1.5 text-xs font-bold rounded-full transition ${roleMode === 'buyer' ? 'bg-white shadow-sm text-green-700' : 'text-gray-500 hover:text-gray-700'}`}>Pembeli</button>
-            <button type="button" onClick={() => setRoleMode('seller')} className={`px-4 py-1.5 text-xs font-bold rounded-full transition ${roleMode === 'seller' ? 'bg-white shadow-sm text-green-700' : 'text-gray-500 hover:text-gray-700'}`}>Admin</button>
+            <button type="button" onClick={() => setRoleMode('buyer')} className={`px-4 py-1.5 text-xs font-bold rounded-full transition ${roleMode === 'buyer' ? 'bg-white shadow-sm text-[#C29666]' : 'text-gray-500 hover:text-gray-700'}`}>Pembeli</button>
+            <button type="button" onClick={() => setRoleMode('seller')} className={`px-4 py-1.5 text-xs font-bold rounded-full transition ${roleMode === 'seller' ? 'bg-white shadow-sm text-[#C29666]' : 'text-gray-500 hover:text-gray-700'}`}>Admin</button>
           </div>
 
           <div className="text-center mb-8 mt-6">
-            <div className="md:hidden w-20 h-20 mx-auto mb-4 rounded-full border-4 border-green-600 bg-white p-1 overflow-hidden shadow-md">
+            <div className="md:hidden w-20 h-20 mx-auto mb-4 rounded-full border-4 border-[#C29666] bg-white p-1 overflow-hidden shadow-md">
               <img src={LOGO_LOGIN_URL} alt="Logo" className="w-full h-full object-contain rounded-full" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight">Selamat Datang!</h2>
@@ -1122,24 +1156,24 @@ function AuthScreen({ setUserRole }) {
               <label className="block text-xs font-bold text-gray-700 mb-2">Email</label>
               <div className="relative">
                 <Mail className="absolute top-3.5 left-4 text-gray-400" size={16} />
-                <input required type="email" placeholder="email@contoh.com" className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none bg-white text-sm transition" />
+                <input required type="email" placeholder="email@contoh.com" className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:border-[#D6AC82] focus:ring-1 focus:ring-[#D6AC82] outline-none bg-white text-sm transition" />
               </div>
             </div>
             <div>
               <label className="block text-xs font-bold text-gray-700 mb-2">Password</label>
               <div className="relative">
                 <Lock className="absolute top-3.5 left-4 text-gray-400" size={16} />
-                <input required type="password" placeholder="••••••••" className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none bg-white text-sm transition" />
+                <input required type="password" placeholder="••••••••" className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:border-[#D6AC82] focus:ring-1 focus:ring-[#D6AC82] outline-none bg-white text-sm transition" />
               </div>
             </div>
             
-            <button type="submit" className="w-full bg-[#00A651] hover:bg-green-700 text-white font-bold py-3.5 rounded-xl shadow-md transition mt-6 text-sm">
+            <button type="submit" className="w-full bg-[#C29666] hover:bg-[#A67B4F] text-white font-bold py-3.5 rounded-xl shadow-md transition mt-6 text-sm">
               Masuk
             </button>
           </form>
           
           <div className="mt-8 text-center text-xs text-gray-600">
-            Belum punya akun? <span className="text-[#00A651] font-bold hover:underline transition cursor-pointer">Daftar di sini</span>
+            Belum punya akun? <span className="text-[#C29666] font-bold hover:underline transition cursor-pointer">Daftar di sini</span>
           </div>
         </div>
       </div>
