@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Home, Info, ShoppingCart, Recycle, Sparkles, MessageSquare, 
   Menu, X, ChevronRight, ChevronLeft, Leaf, Coins, CheckCircle, Package, MapPin, Search, Cpu, Link as LinkIcon,
@@ -8,16 +8,12 @@ import {
   Share2, MoreVertical, Newspaper, ExternalLink, Factory, Hammer, ArrowLeft, TrendingUp, Users, CheckSquare, Edit, Phone
 } from 'lucide-react';
 
-// =========================================================================
-// PENTING: SAAT DI-COPY KE VS CODE, HAPUS 4 BARIS LINK ONLINE DI BAWAH INI,
-// LALU GANTI MENJADI IMPORT LOKAL SEPERTI INI (Pastikan .jpg / .jpeg benar):
-//
-import logoKu from './assets/logo.png';
-import bgKu from './assets/Background.jpg'; 
-import gambarVisi from './assets/visi.jpg';
-import gambarMisi from './assets/misi.jpg';
-// =========================================================================
-
+// Mengganti import lokal dengan URL dummy khusus untuk pratinjau di web ini.
+// Silakan kembalikan menjadi import lokal jika dijalankan di VSCode Anda.
+const logoKu = "logo.png"; // Dummy Logo
+const bgKu = "Background.jpg"; // Dummy Background
+const gambarVisi = "visi.jpg"; // Dummy Visi
+const gambarMisi = "misi.jpg"; // Dummy Misi
 
 // --- DATA PRODUK LENGKAP (LINK GAMBAR 100% VALID & SESUAI JUDUL) ---
 const INITIAL_PRODUCTS = [
@@ -93,7 +89,12 @@ export default function App() {
   const [notification, setNotification] = useState('');
   const [profilePic, setProfilePic] = useState(null);
 
-  // Info Toko Penjual (Ditampilkan di Beranda/Tentang Pembeli)
+  // STATE CHAT GLOBAL
+  const [chatMessages, setChatMessages] = useState([
+    { id: 1, senderRole: 'seller', text: 'Halo! Selamat datang di WOODISHKAYU. Ada yang bisa kami bantu?', time: '09:00' }
+  ]);
+
+  // Info Toko Penjual
   const [shopInfo, setShopInfo] = useState({
     username: "UMKM WOODISHKAYU",
     email: "admin@woodishkayu.com",
@@ -194,6 +195,9 @@ export default function App() {
             </nav>
 
             <div className="hidden md:flex items-center space-x-2">
+              <button onClick={() => setActiveTab('chat')} className="relative p-2 rounded-full transition-colors flex items-center hover:bg-gray-100" style={activeTab === 'chat' ? { backgroundColor: '#FCF9F5', color: '#833717' } : { color: '#6b7280' }} title="Pesan/Chat">
+                <MessageSquare size={22} />
+              </button>
               {userRole === 'buyer' && (
                 <button onClick={() => setActiveTab('cart')} className="relative p-2 rounded-full transition-colors flex items-center hover:bg-gray-100" style={activeTab === 'cart' ? { backgroundColor: '#FCF9F5', color: '#833717' } : { color: '#6b7280' }} title="Keranjang">
                   <ShoppingCart size={22} />
@@ -207,6 +211,9 @@ export default function App() {
 
             {/* MOBILE BURGER */}
             <div className="md:hidden flex items-center space-x-3">
+              <button onClick={() => setActiveTab('chat')} className="relative text-gray-600">
+                <MessageSquare size={24} />
+              </button>
               {userRole === 'buyer' && (
                 <button onClick={() => setActiveTab('cart')} className="relative text-gray-600">
                   <ShoppingCart size={24} />
@@ -229,6 +236,7 @@ export default function App() {
                 <NavItem id="news" icon={Newspaper} label="Berita" />
                 <NavItem id="contact" icon={Phone} label="Kontak" />
                 <NavItem id="waste" icon={Recycle} label="Tukar Limbah" />
+                <NavItem id="chat" icon={MessageSquare} label="Pesan (Chat)" />
                 <NavItem id="cart" icon={ShoppingCart} label="Keranjang" badge={totalCartItems} />
               </>
             ) : (
@@ -237,6 +245,7 @@ export default function App() {
                 <NavItem id="news" icon={Newspaper} label="Berita UMKM" />
                 <NavItem id="ai" icon={Sparkles} label="Pelatihan AI" />
                 <NavItem id="store" icon={UploadCloud} label="Toko (Upload)" />
+                <NavItem id="chat" icon={MessageSquare} label="Pesan (Chat)" />
               </>
             )}
             <NavItem id="profile" icon={User} label="Profil Saya" />
@@ -252,6 +261,7 @@ export default function App() {
         </div>
       )}
 
+      {}
       {/* ================= MAIN CONTENT AREA ================= */}
       <main className="flex-grow pb-20 md:pb-8">
         {userRole === 'buyer' && activeTab === 'home' && <HomeBuyerTab setActiveTab={setActiveTab} shopInfo={shopInfo} coins={coins} setCoins={setCoins} ecoPayBalance={ecoPayBalance} showNotification={showNotification} />}
@@ -267,6 +277,9 @@ export default function App() {
         {userRole === 'seller' && activeTab === 'ai' && <AITab />}
         {userRole === 'seller' && activeTab === 'store' && <UploadProductTab products={products} setProducts={setProducts} showNotification={showNotification} shopInfo={shopInfo} />}
         {userRole === 'seller' && activeTab === 'profile' && <ShopeeStyleProfileTab role={userRole} setAuth={setUserRole} showNotification={showNotification} shopInfo={shopInfo} setShopInfo={setShopInfo} setActiveTab={setActiveTab} coins={coins} ecoPayBalance={ecoPayBalance} cartCount={totalCartItems} profilePic={profilePic} setProfilePic={setProfilePic} />}
+        
+        {/* TAB CHAT BERLAKU UNTUK BUYER DAN SELLER */}
+        {activeTab === 'chat' && <ChatTab role={userRole} chatMessages={chatMessages} setChatMessages={setChatMessages} shopInfo={shopInfo} />}
       </main>
 
       {/* ================= MOBILE BOTTOM NAV ================= */}
@@ -519,7 +532,7 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
 
   // MASUK KE DETAIL PRODUK UNTUK EDIT/HAPUS
   if (selectedProduct) {
-    return <ProductDetail product={selectedProduct} role="seller" onBack={() => setSelectedProduct(null)} setProducts={setProducts} showNotification={showNotification} />;
+    return <ProductDetail product={selectedProduct} role="seller" onBack={() => setSelectedProduct(null)} setProducts={setProducts} showNotification={showNotification} setActiveTab={setActiveTab} />;
   }
 
   return (
@@ -613,7 +626,6 @@ function SellerHomeTab({ products, setProducts, showNotification, setActiveTab, 
   );
 }
 
-
 // KATALOG GLOBAL (HANYA PEMBELI)
 function CatalogTab({ products, role, addToCart, setActiveTab }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -622,7 +634,7 @@ function CatalogTab({ products, role, addToCart, setActiveTab }) {
   const filtered = products.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   if (selectedProduct) {
-    return <ProductDetail product={selectedProduct} role={role} onBack={() => setSelectedProduct(null)} onAddToCart={() => addToCart(selectedProduct)} onBuyNow={() => { addToCart(selectedProduct); setActiveTab('cart'); }} />;
+    return <ProductDetail product={selectedProduct} role={role} onBack={() => setSelectedProduct(null)} onAddToCart={() => addToCart(selectedProduct)} onBuyNow={() => { addToCart(selectedProduct); setActiveTab('cart'); }} setActiveTab={setActiveTab} />;
   }
 
   return (
@@ -664,7 +676,7 @@ function CatalogTab({ products, role, addToCart, setActiveTab }) {
 }
 
 // DETAIL PRODUK (LOGIKANYA BERUBAH SESUAI ROLE)
-function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProducts, showNotification }) {
+function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProducts, showNotification, setActiveTab }) {
   const [showBlockchain, setShowBlockchain] = useState(false);
 
   const mockReviews = [
@@ -759,8 +771,19 @@ function ProductDetail({ product, role, onBack, onAddToCart, onBuyNow, setProduc
       <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex items-center p-3 z-50 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] max-w-4xl md:left-1/2 md:-translate-x-1/2 md:rounded-t-2xl">
         {role === 'buyer' ? (
           <>
-            <div className="flex w-1/3"><button onClick={onAddToCart} className="w-full flex flex-col items-center" style={{ color: '#C29666' }}><ShoppingCart size={22} /><span className="mt-1 font-medium" style={{ fontSize: '10px' }}>Keranjang</span></button></div>
-            <div className="w-2/3 pl-2"><button onClick={onBuyNow} className="w-full text-white font-bold rounded-xl py-3 shadow-lg transition hover:opacity-90" style={{ backgroundColor: '#C29666' }}>Beli Sekarang</button></div>
+            <div className="flex w-2/5 divide-x divide-gray-200">
+              <button onClick={() => setActiveTab('chat')} className="w-1/2 flex flex-col items-center justify-center text-gray-500 hover:text-[#C29666] transition">
+                <MessageSquare size={20} />
+                <span className="mt-1 font-medium" style={{ fontSize: '10px' }}>Chat</span>
+              </button>
+              <button onClick={onAddToCart} className="w-1/2 flex flex-col items-center justify-center transition hover:opacity-80" style={{ color: '#C29666' }}>
+                <ShoppingCart size={20} />
+                <span className="mt-1 font-medium" style={{ fontSize: '10px' }}>Keranjang</span>
+              </button>
+            </div>
+            <div className="w-3/5 pl-2">
+              <button onClick={onBuyNow} className="w-full text-white font-bold rounded-xl py-3 shadow-lg transition hover:opacity-90" style={{ backgroundColor: '#C29666' }}>Beli Sekarang</button>
+            </div>
           </>
         ) : (
           <div className="w-full flex gap-3 px-2">
@@ -1179,6 +1202,80 @@ function AITab() {
     </div>
   );
 }
+
+// ================= LAYAR CHAT PEMBELI & PENJUAL =================
+function ChatTab({ role, chatMessages, setChatMessages, shopInfo }) {
+  const [input, setInput] = useState('');
+  const messagesEndRef = useRef(null);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    
+    const newMessage = {
+      id: Date.now(),
+      senderRole: role, // Merekam siapa pengirimnya: 'buyer' atau 'seller'
+      text: input,
+      time: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+    };
+    
+    setChatMessages(prev => [...prev, newMessage]);
+    setInput('');
+  };
+
+  useEffect(() => {
+    // Auto-scroll ke bawah tiap ada pesan baru
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chatMessages]);
+
+  const isBuyer = role === 'buyer';
+  const chatPartnerName = isBuyer ? shopInfo.username : 'Pembeli EcoCraft';
+  const chatPartnerRole = isBuyer ? 'Mitra Penjual' : 'Member Premium';
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-6 animate-fade-in flex flex-col h-[80vh] md:h-[85vh]">
+      {/* Header Chat */}
+      <div className="bg-white p-4 rounded-t-3xl border-b border-gray-100 flex items-center shadow-sm">
+        <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mr-4">
+          <User className="text-gray-400" size={24} />
+        </div>
+        <div>
+          <h2 className="font-bold text-gray-800">{chatPartnerName}</h2>
+          <p className="text-xs text-green-500 font-medium">Online • {chatPartnerRole}</p>
+        </div>
+      </div>
+
+      {/* Area Pesan */}
+      <div className="flex-grow p-4 md:p-6 overflow-y-auto bg-gray-50 border-x border-gray-100 space-y-4">
+        {chatMessages.map((msg) => {
+          // Menentukan apakah pesan tersebut milik "saya" atau lawan bicara
+          const isMe = msg.senderRole === role;
+          return (
+            <div key={msg.id} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
+              <div className={`max-w-[80%] p-3.5 rounded-2xl relative ${isMe ? 'text-white rounded-br-none shadow-md' : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'}`} style={isMe ? { backgroundColor: '#C29666' } : {}}>
+                <p className="text-sm leading-relaxed">{msg.text}</p>
+                <span className={`text-[10px] mt-1 block text-right ${isMe ? 'text-white/80' : 'text-gray-400'}`}>{msg.time}</span>
+              </div>
+            </div>
+          );
+        })}
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* Input Chat */}
+      <div className="p-4 bg-white border border-gray-100 rounded-b-3xl shadow-sm">
+        <form onSubmit={handleSend} className="flex gap-2">
+          <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Tulis pesan..." className="flex-grow border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#C29666] text-sm" />
+          <button type="submit" disabled={!input.trim()} className="text-white px-5 rounded-xl font-bold flex items-center justify-center transition hover:opacity-90 disabled:opacity-50" style={{ backgroundColor: '#833717' }}>
+            <MessageSquare size={18} className="md:mr-2" />
+            <span className="hidden md:inline">Kirim</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 
 // ================= LAYAR LOGIN =================
 function AuthScreen({ setUserRole }) {
